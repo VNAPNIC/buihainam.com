@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="hi"
+                 name="Bùi Hải Nam"
+                 start-page="Home.md">
+    <toc-element topic="Home.md"/>
+    <toc-element toc-title="Programming">
+        <toc-element topic="oop-vs-pop.md"/>
+        <toc-element topic="lap-trinh-tuyen-tinh-la-gi-uu-nhuoc-diem.md"/>
+        <toc-element topic="lap-trinh-huong-doi-tuong-la-gi-uu-nhuoc-diem.md"/>
+        <toc-element topic="lap-trinh-cau-truc-la-gi-uu-nhuoc-diem.md"/>
+    </toc-element>
+    <toc-element toc-title="Git">
+        <toc-element topic="cac-lenh-co-ban-trong-git.md"/>
+    </toc-element>
+    <toc-element toc-title="Java">
+        <toc-element topic="cac-tinh-chat-huong-doi-tuong-cua-java.md"/>
+        <toc-element topic="ngon-ngu-java-la-gi.md"/>
+        <toc-element topic="off-heap.md"/>
+        <toc-element topic="transaction-memory.md"/>
+        <toc-element topic="fast-thread-local.md"/>
+        <toc-element topic="mechanical-sympathy.md"/>
+        <toc-element topic="java-concurrent.md"/>
+        <toc-element topic="transaction-isolation-level.md"/>
+    </toc-element>
+    <toc-element toc-title="Junit">
+        <toc-element topic="junit-la-gi.md"/>
+        <toc-element topic="assertions-la-gi.md"/>
+        <toc-element topic="junit-voi-matchers-va-assertthat.md"/>
+        <toc-element topic="junit-expected-exceptions.md"/>
+        <toc-element topic="test-runner-va-test-suite.md"/>
+        <toc-element topic="thu-tu-chay-cac-test-case-trong-junit.md"/>
+        <toc-element topic="junit-ignoring-tests-va-timeout-voi-test-case.md"/>
+    </toc-element>
+    <toc-element toc-title="Kotlin">
+        <toc-element topic="kotlin-basic.md"/>
+        <toc-element topic="kotlin-class-inheritance.md"/>
+        <toc-element topic="kotlin-property-field.md"/>
+        <toc-element topic="kotlin-function.md"/>
+        <toc-element topic="kotlin-inline-function.md"/>
+        <toc-element topic="kotlin-higher-order-function.md"/>
+        <toc-element topic="kotlin-interface.md"/>
+        <toc-element topic="kotlin-data-class.md"/>
+        <toc-element topic="kotlin-nested-class.md"/>
+        <toc-element topic="kotlin-visibility-modifiers.md"/>
+        <toc-element topic="kotlin-lambda.md"/>
+        <toc-element topic="kotlin-collection.md"/>
+        <toc-element topic="kotlin-enum-classes.md"/>
+        <toc-element topic="kotlin-overloading-operator.md"/>
+        <toc-element topic="kotlin-range.md"/>
+        <toc-element topic="kotlin-idioms.md"/>
+        <toc-element topic="kotlin-exception.md"/>
+        <toc-element topic="kotlin-delegation.md"/>
+        <toc-element topic="kotlin-delegated-property.md"/>
+        <toc-element topic="call-java-from-kotlin.md"/>
+        <toc-element topic="call-kotlin-from-java.md"/>
+    </toc-element>
+    <toc-element toc-title="Dart">
+        <toc-element topic="dart-environment-settings.md"/>
+        <toc-element topic="dart-core.md"/>
+        <toc-element topic="dart-async.md"/>
+        <toc-element topic="dart-vs-swift-comparison.md"/>
+    </toc-element>
+    <toc-element toc-title="Database">
+        <toc-element topic="sql-basic.md"/>
+        <toc-element topic="sql-performance.md"/>
+        <toc-element toc-title="MariaDB">
+            <toc-element topic="maria-db.md"/>
+            <toc-element topic="Install_MariaDB_5.x_On_CentOS_7.md"/>
+            <toc-element topic="Install_MariaDB_10.x_On_CentOS_7.md"/>
+            <toc-element topic="Install_MariaDB_10.x_On_CentOS_8.md"/>
+            <toc-element topic="Install_MariaDB_10.x_On_Ubuntu_18-04.md"/>
+        </toc-element>
+
+        <toc-element toc-title="MySql">
+            <toc-element topic="my-sql.md" />
+            <toc-element topic="Install_MySQL_5.x_On_CentOS_7.md"/>
+            <toc-element topic="Install_MySQL_5.x_On_Ubuntu_18-04.md"/>
+            <toc-element topic="Install_MySQL_8.x_On_CentOS_7.md"/>
+            <toc-element topic="Install_MySQL_8.x_On_CentOS_8.md"/>
+            <toc-element topic="Install_MySQL_8.x_On_Ubuntu_18-04.md"/>
+        </toc-element>
+    </toc-element>
+</instance-profile>

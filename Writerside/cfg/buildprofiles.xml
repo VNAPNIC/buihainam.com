@@ -1,0 +1,17 @@
+<buildprofiles xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/build-profiles.xsd"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <variables>
+        <algolia-id>5J1H2V6Z8N</algolia-id>
+        <algolia-index>prod_buihainam</algolia-index>
+        <algolia-api-key>2a0aa9193e0208348c4705cdbe508d70</algolia-api-key>
+        <web-root>https://buihainam.com</web-root>
+        <custom-favicons>about.png</custom-favicons>
+        <header-logo>about.png</header-logo>
+        <showDownloadButton>true</showDownloadButton>
+        <product-web-url>https://buihainam.com</product-web-url>
+    </variables>
+    <build-profile instance="instance_id"/>
+    <footer>
+        <copyright>2019 - 2020 Bùi Hải Nam</copyright>
+    </footer>
+</buildprofiles>
