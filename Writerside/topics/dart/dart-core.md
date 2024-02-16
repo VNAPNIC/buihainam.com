@@ -2,7 +2,7 @@
 
 Trong bài viết [Trước](dart-environment-settings.md) mình đã hướng dẫn các bạn cài đặt môi trường và setup các kiểu dự án Dart trên Intellij IDEA. Ở bài viết này mình sẽ mô tả chi tiết về cú pháp cũng như các tính năng của Dart 😑
 
-```dart
+```java
 // Define a function.
 printInteger(int aNumber) {
   print('The number is $aNumber.'); // Print to console.
@@ -43,7 +43,7 @@ variables đôi lúc được biết tới với tên gọi *fields* hoặc *pro
 
 Để khai báo một biến `name` tham chiếu tới `String` object với giá trị “Bob”, ta có thể dùng 1 trong 3 cách sau:
 
-```dart
+```java
 var name = 'Bob';
 
 dynamic name = 'Bob';
@@ -55,7 +55,7 @@ String name = 'Bob';
 
 Giá trị khởi tạo của một biến bất kỳ đều là `null`.
 
-```dart
+```java
 int lineCount;
 assert(lineCount == null);
 ```
@@ -64,7 +64,7 @@ assert(lineCount == null);
 
 Nếu bạn không muốn giá trị của biến bị thay đổi, hãy sử dụng `final` hoặc `const` thay vì dùng `var/type`; Việc hiểu rõ nguyên lý hoạt động`final` với `const` không hề đơn giản một chút nào 😂
 
-```dart
+```java
 final name = 'Bob'; // Without a type annotation
 // name = 'Alice';  // Uncommenting this causes an error: Error: Setter not found: 'name'.
 final String nickname = 'Bobby'; // With a type annotation
@@ -75,7 +75,7 @@ const double atm = 1.01325 * bar; // Standard atmosphere
 
 **final** nghĩa là single-assignment 🤣 Mỗi một biến final hoặc một thuộc tính *phải có* một khởi tạo. Và một khi bạn đã gán giá trị cho biến đó thì, bạn sẽ ko thể gán lại cho nó 1 giá trị khác.
 
-```dart
+```java
 final List finalList = new List();
 finalList.addAll(['one', 'two', 'three']);
 
@@ -88,7 +88,7 @@ finalList.forEach((f) => print(f));   //empty
 
 **const** nghĩa là một đối tượng bất biến không đổi ở thời điểm compile code. Một khi bạn gán giá trị tới một const object thì bạn không thể thay đổi giá trị đó. Và giá trị đó phải được khởi tạo vào thời điểm compile code, chứ ko phải đợi tới thời điểm run code.
 
-```dart
+```java
 const List constList = const ['one', 'two', 'three'];
 constList.add('four');   // Can not add to immutable object
 constList = new List();  // Can not assign new value
@@ -100,7 +100,7 @@ Nếu `const` variable ở class level, hãy sử dụng `static const`.
 
 Ngoài ra, `const` không chỉ được dùng trong định nghĩa hằng biến (constant variables), mà nó còn có thể tạo ra hằng giá trị (constant values).
 
-```dart
+```java
 // Note: [] tạo ra một list rỗng.
 // const [] tạo ra một list rỗng và không thể thay đổi (EIL: empty, immutable list).
 var foo = const []; // foo đang là một EIL.
@@ -137,7 +137,7 @@ Mình sẽ chỉ đề cập tới các kiểu mà mình thích =))
 
 Để khởi tạo một `Map` object, ta có thể dùng các cách sau:
 
-```dart
+```java
 var gifts = {
   // Key:    Value
   'first': 'partridge',
@@ -153,7 +153,7 @@ gifts['fifth'] = 'golden rings';
 
 Sử dụng `.length` sẽ trả về số lượng cặp key-value trong map:
 
-```dart
+```java
 var gifts = {'first': 'partridge'};
 gifts['fourth'] = 'calling birds';
 assert(gifts.length == 2);
@@ -161,7 +161,7 @@ assert(gifts.length == 2);
 
 Chúng ta cũng sẽ gặp lỗi nếu cố tình thay đổi constant Map (constant values)
 
-```dart
+```java
 final constantMap = const {
   2: 'helium',
   10: 'neon',
@@ -183,7 +183,7 @@ Cách thông dụng để biểu diễn một mã Unicode là `\uXXXX`, ở đâ
 
 Ví dụ bên dưới miêu tả mối quan hệ giữa runes, 16-bit code units, và 32-bit code points.
 
-```dart
+```java
 var clapping = '\u{1f44f}';
 print(clapping);
 print(clapping.codeUnits);
@@ -196,7 +196,7 @@ print(new String.fromCharCodes(input));
 
 Sẽ in ra
 
-```terminal
+```Bash
 👏
 [55357, 56399]
 [128079]
@@ -207,7 +207,7 @@ Sẽ in ra
 
 Vì Dart là `true object-oriented language` nên `function` cũng là object. Bạn có thể khai báo 1 function theo các kiểu bên dưới:
 
-```dart
+```java
 bool isNoble(int atomicNumber) {
   return _nobleGases[atomicNumber] != null;
 }
@@ -225,7 +225,7 @@ bool isNoble(int atomicNumber) => _nobleGases[atomicNumber] != null;
 - Optional positional parameters: Sử dụng dấu ngoặc vuông `[param1, param2, …]`
 - Default parameter values: Sử dụng dấu `=` để khai báo giá trị mặc định cho **optional parameter**
 
-```dart
+```java
 String drink({String drinks = 'whisky'}) {
   return 'I am drink $drinks';
 }
@@ -246,7 +246,7 @@ print(say('Bob', 'Howdy', 'smoke signal'));
 
 sẽ cho ra kết quả:
 
-```terminal
+```Bash
 I am drink whisky
 I am drink vodka
 Bob says Howdy
@@ -257,7 +257,7 @@ Bob says Howdy with a smoke signal
 
 Tất cả các ứng dụng đều có một hàm top-level `main()`. `main()` trả vể kiểu `void` và có tham số tuỳ chọn là `List<String>`.
 
-```dart
+```java
 void main(List<String> arguments) {
   print(arguments);
 
@@ -269,7 +269,7 @@ void main(List<String> arguments) {
 
 Chú ý khi compile code nếu muốn các câu lệnh `assert` có hiệu lực thì bạn nhớ thêm flag sau vào nhé:
 
-```terminal
+```Bash
 $ dart --enable-asserts bin/main.dart 1 test
 ```
 
@@ -277,7 +277,7 @@ $ dart --enable-asserts bin/main.dart 1 test
 
 Dart cho phép truyền một function với tư cách là biến của một function khác, và cũng có thể gán một function vào một biến.
 
-```dart
+```java
 void printElement(int element) {
   print(element);
 }
@@ -294,7 +294,7 @@ assert(loudify('hello') == '!!! HELLO !!!');
 ### Anonymous functions
 
 Bạn có thể tạo ra các hàm vô danh (*anonymous function*) hay đôi lúc gọi là *lambda* hoặc *closure*.
-```dart
+```java
 ([[Type] param1[, …]]) {
   codeBlock;
 };
@@ -304,7 +304,7 @@ Bạn có thể tạo ra các hàm vô danh (*anonymous function*) hay đôi lú
 
 Chỉ cần chú ý kiểu trả về của wrap function là `Function`.
 
-```dart
+```java
 /// Returns a function that adds [addBy] to the
 /// function's argument.
 Function makeAdder(num addBy) {
@@ -327,7 +327,7 @@ assert(add4(3) == 7);
 
 Thấy có cái toán tử này lạ lạ 😂
 
-```dart
+```java
 assert(5 / 2 == 2.5); // Phép chia trả về kiểu double
 assert(5 ~/ 2 == 2);  // Phép chia trả về kiểu int
 ```
@@ -344,14 +344,14 @@ Một toán tử mình nghĩ là rất mới, dùng để check kiểu của bi�
 
 Mọi thứ trong dart đều là `Object` 🤣
 
-```dart
+```java
 String s = 'String is Object';
 assert(s is Object == true);
 ```
 
 ### Assignment operators
 
-```dart
+```java
 // Assign value to a
 a = value;
 // Assign value to b if b is null; otherwise, b stays the same
@@ -362,7 +362,7 @@ Ta dùng toán tử `??=` khi muốn gán giá trị cho biến chỉ khi biến
 
 ### Logical operators
 
-```dart
+```java
 if (!done && (col == 0 || col == 3)) {
   // ...Do something...
 }
@@ -370,12 +370,12 @@ if (!done && (col == 0 || col == 3)) {
 
 ### Conditional expressions
 
-```dart
+```java
 condition ? expr1 : expr2
 ```
 Nếu `condition` là true, thực hiện `expr1` (và trả về giá trị của nó); ngược lại, thực hiện và trả về giá trị của `expr2`.
 
-```dart
+```java
 expr1 ?? expr2
 ```
 Nếu `expr1` khác `null`, trả về giá trị của chính nó; ngược lại, trả về giá trị của `expr2`.
@@ -384,7 +384,7 @@ Nếu `expr1` khác `null`, trả về giá trị của chính nó; ngược l�
 
 Cascades dịch nôm na là thác nước =)) cú pháp là dấu `..`, cho phép anh em thực hiện nhiều thao tác tuần tự trên 1 object. Nhìn thì giống với thuật ngữ `chain method` ([Fluent_interface](https://en.wikipedia.org/wiki/Fluent_interface)) nhưng cơ chế có đôi phần khác biệt.
 
-```dart
+```java
 querySelector('#confirm') // Get an object.
   ..text = 'Confirm' // Use its members.
   ..classes.add('important')
@@ -395,7 +395,7 @@ Trong đoạn code trên, thì dòng đầu gọi tới method `querySelector()`
 
 Chúng ta có thể viết lại như sau:
 
-```dart
+```java
 var button = querySelector('#confirm');
 button.text = 'Confirm';
 button.classes.add('important');
@@ -404,7 +404,7 @@ button.onClick.listen((e) => window.alert('Confirmed!'));
 
 Đặc biệt lưu ý là `method` đầu tiên hoặc function khởi tạo cascade phải trả về một object thực sự. Ví dụ đoạn code sau sẽ ko thực hiện đc:
 
-```dart
+```java
 var sb = StringBuffer();
 sb.write('foo')
   ..write('bar'); // Error: method 'write' isn't defined for 'void'.
@@ -432,7 +432,7 @@ Dart sử dụng các câu lệnh sau để control luồng xử lý:
 
 Biểu thức trong điều kiện `if` bắt buộc phải là kiểu `bool`. Đoạn code sau sẽ không thể chạy, do `1` có type là `int`.
 
-```dart
+```java
 if (1) {
   print('We can not execute this code!');
 }
@@ -444,33 +444,33 @@ Closure bên trong Dart's `for` loops có thể capture được `value` và `in
 Hãy thử so sánh 2 đoạn code và kết quả output ra giữa 2 ngôn ngữ xem sao :hugs:
 
 - *Javascript*
-```js
+```Javascript
     var callbacks = [];
     for (var i = 0; i < 2; i++) {
       callbacks.push(() => console.log(i));
     }
     callbacks.forEach((c) => c());
 ```
- ```terminal
+ ```Bash
     2
     2
 ```
 - *Dart*
-```js
+```Javascript
     var callbacks = [];
     for (var i = 0; i < 2; i++) {
       callbacks.add(() => print(i));
     }
     callbacks.forEach((c) => c());
 ```
-```terminal
+```Bash
     0
     1
 ```
 
 Dart support lệnh `for-in` và `forEach`
 
-```dart
+```java
 var collection = [0, 1, 2];
 for (var x in collection) {
   print(x); // 0 1 2
@@ -483,7 +483,7 @@ candidates.forEach((candidate) => candidate.interview());
 
 Dart hỗ trợ method `assert`, dùng để ngăn chương trình tiếp tục thực thi nếu có bất kỳ điều kiện nào bên trong nó là `false`.
 
-```dart
+```java
 // Make sure the variable has a non-null value.
 assert(text != null);
 
@@ -495,11 +495,11 @@ assert(urlString.startsWith('https'));
 ```
 Để thay thế nội dung hiển thị khi `assert` thất bại, chúng ta thêm message vào tham số thứ hai.
 
-```dart
+```java
 var urlString  = 'www.google.com';
 assert(urlString.startsWith('https'), 'URL ($urlString) should start with "https".');
 ```
-```terminal
+```Bash
 Failed assertion: line 7 pos 8: 'urlString.startsWith('https')': URL (www.google.com) should start with "https".
 ```
 
@@ -508,13 +508,13 @@ Failed assertion: line 7 pos 8: 'urlString.startsWith('https')': URL (www.google
 ### Throw
 
 Thông thường chúng ta sẽ raise một exception như sau
-```dart
+```java
 throw new Exception("message");
 throw UnimplementedError();
 throw FormatException('Expected at least 1 section');
 ```
 đôi khi có thể là 1 objects
-```dart
+```java
 throw 'Out of llamas!';
 ```
 
@@ -522,7 +522,7 @@ throw 'Out of llamas!';
 
 ### Catch
 
-```dart
+```java
 try {
   breedMoreLlamas();
 } on OutOfLlamasException {
@@ -539,7 +539,7 @@ try {
 
 Bạn có thể chỉ định 1 hoặc 2 parameters cho method `catch()`.
 
-```dart
+```java
 try {
   // ···
 } on Exception catch (e) {
@@ -554,7 +554,7 @@ try {
 
 Kiến thức vô cùng căn bản 😑 Code block đặt trong `finally` sẽ được thực thi dù có hay không có ngoại lệ.
 
-```dart
+```java
 try {
   breedMoreLlamas();
 } finally {
@@ -575,7 +575,7 @@ try {
 
 Dart là ngôn ngữ hướng đối tượng với class (mọi object đều là một instance của class) và *mixin-based inheritance* (mặc dù một class chỉ có duy nhất một superclass, nhưng mà class body (các variable, method) có thể được sử dụng lại như multiple class hierarchies (đa thừa kế)).
 
-```dart
+```java
 // Create a Point using Point().
 var p1 = new Point(2, 2);
 
@@ -588,14 +588,14 @@ Từ Dart 2 bạn có thể bỏ từ khóa `new`. Ví dụ: `var p1 = Point(2, 
 ### Using class members
 
 Sử dụng `?.` thay cho `.` khi truy xuất `members` của class giúp ta tránh được các exception khi object có giá trị null:
-```dart
+```java
 // If p is non-null, set its y value to 4.
 p?.y = 4;
 ```
 
 ### Constructors
 
-```dart
+```java
 class Point {
   num x, y;
 
@@ -609,7 +609,7 @@ class Point {
 
 `this` keyword để chỉ current instance. Dart còn hỗ trợ pattern constructor
 
-```dart
+```java
 class Point {
   num x, y;
 
@@ -631,7 +631,7 @@ Một điều đáng lưu ý là trong Dart thì *subclasses* không kế thừa
 
 Sử dụng named constructor để có thể implement nhiều constructors cho một class:
 
-```dart
+```java
 class Point {
   num x, y;
 
@@ -657,7 +657,7 @@ Mặc định thì constructor của subclass sẽ gọi tới unnamed, no-argum
 Chúng ta hãy thử xem các case sau:
 
 - Superclass không khai báo constructor:
-    ```dart
+    ```java
     class Person {
       String firstName;
     }
@@ -672,12 +672,12 @@ Chúng ta hãy thử xem các case sau:
       var emp = new Employee({});
     }
     ```
-    ```terminal
+    ```Bash
     in Employee
     ```
     Thế là subclass không gọi cái default constructor, code vẫn chạy vô tư 🤣
 - Superclass khai báo unnamed,  no-agrument  constructor, và subclass gọi constructor đó (trường hợp không gọi cũng thế)
-    ```dart
+    ```java
     class Person {
       String firstName;
       Person() {
@@ -695,13 +695,13 @@ Chúng ta hãy thử xem các case sau:
       var emp = new Employee({});
     }
     ```
-    ```terminal
+    ```Bash
     in Person
     in Employee
     ```
     Ok, mặc cho tham số giữa constructor của super và subclass khác nhau, code vẫn ổn 🤣
 - Superclass khai báo unamed constructor (constructor này có argument) và subclass không gọi constructor đó:
-    ```dart
+    ```java
     class Person {
       String firstName;
       Person(num x) {
@@ -719,12 +719,12 @@ Chúng ta hãy thử xem các case sau:
       var emp = new Employee({});
     }
     ```
-    ```terminal
+    ```Bash
     Error: The unnamed constructor in 'Person' requires arguments.
     ```
     NG, ko gọi ko được 🤣
 - Superclass khai báo named constructor và subclass không gọi constructor đó
-    ```dart
+    ```java
     class Person {
       String firstName;
       Person.fromJson() {
@@ -742,23 +742,23 @@ Chúng ta hãy thử xem các case sau:
       var emp = new Employee({});
     }
     ```
-    ```terminal
+    ```Bash
     Error: 'Person' doesn't have an unnamed constructor.
     ```
 Trường hợp này cho chúng ta thấy ngay một điều là nếu superclass có một named constructor, đồng nghĩa với việc các subclass cũng phải tạo ra constructor và gọi lại construcor của superclass đó. Thử sửa lại code của `Employee`, ta có kết quả sau:
-    ```dart
+    ```java
     class Employee extends Person {
       Employee(Map data) : super.fromJson() {
         print('in Employee');
       }
     }
     ```
-    ```terminal
+    ```Bash
     in Person
     in Employee
     ```
 - Superclass khai báo cả named & unnamed constructor thì sao ???
-    ```dart
+    ```java
     class Person {
       String firstName;
       Person() {
@@ -779,7 +779,7 @@ Trường hợp này cho chúng ta thấy ngay một điều là nếu superclas
       var emp = new Employee({});
     }
     ```
-    ```terminal
+    ```Bash
     in unnamed Person   // in fromJson Person
     in Employee
     ```
@@ -787,7 +787,7 @@ Rõ ràng ở trường hợp superclass có một unnamed, no-argument construc
 
 Chúng ta cũng có thể truyền tham số vào superclass constructor thông qua kết quả tính toán của một `method`, tuy nhiên tham số được truyền này (hay nội tại trong `method`) không được access tới `this` :clown_face:
 
-```dart
+```java
 class Employee extends Person {
   Employee() : super.fromJson(getDefaultData());
   // ···
@@ -796,7 +796,7 @@ class Employee extends Person {
 
 #### Initializer list
 
-```dart
+```java
 // Initializer list sets instance variables before
 // the constructor body runs.
 Point.fromJson(Map<String, num> json)
@@ -810,7 +810,7 @@ Point.fromJson(Map<String, num> json)
 
 Trong quá trình development, bạn có thể validate inputs bằng cách sử dụng `assert` trong initializer list.
 
-```dart
+```java
 Point.withAssert(this.x, this.y) : assert(x >= 0) {
   print('In Point.withAssert(): ($x, $y)');
 }
@@ -820,7 +820,7 @@ Point.withAssert(this.x, this.y) : assert(x >= 0) {
 
 Đôi lúc nhiệm vụ duy nhất của một constructor chỉ là chuyển hướng sang một constructor khác trong cùng một class. Redirecting constructor luôn có body là rỗng, và chỉ sinh ra để gọi tới một constructor khác sau dấu `:`.
 
-```dart
+```java
 class Point {
   num x, y;
 
@@ -835,7 +835,7 @@ class Point {
 
 var p = Point.alongXAxis(1);
 ```
-```terminal
+```Bash
 This coordinate: x=1 y=0
 ```
 Trong ví dụ trên thì `Point1.alongXAxis` chính là `redirecting constructor`.
@@ -844,7 +844,7 @@ Trong ví dụ trên thì `Point1.alongXAxis` chính là `redirecting constructo
 
 Nếu như bạn muốn tạo ra một object không đổi, hãy tạo ra một `const` constructor, và đảm bảo rằng các variable là final:
 
-```dart
+```java
 class ImmutablePoint {
   static final ImmutablePoint origin =
       const ImmutablePoint(0, 0);
@@ -861,7 +861,7 @@ Chúng ta sử dụng `factory` khi muốn implement constructor không chỉ đ
 
 Ví dụ sau implement Logger class làm nhiệm vụ
 
-```dart
+```java
 class Logger {
   final String name;
   bool mute = false;
@@ -898,7 +898,7 @@ main() {
   loggerTwo.log('Icon clicked');
 }
 ```
-```terminal
+```Bash
 Logger's name: UI
 Logger's cache: {}
 Log message: Button clicked
@@ -916,7 +916,7 @@ Log message: Icon clicked
 
 Ko có gì đặc sắc ngoài việc truy xuất tới instance variables mà ko cần `this`.
 
-```dart
+```java
 import 'dart:math';
 
 class Point {
@@ -936,7 +936,7 @@ class Point {
 
 Nếu bạn đã từng code Typescript thì thấy không khác mấy
 
-```dart
+```java
 class Rectangle {
   num left, top, width, height;
 
@@ -961,7 +961,7 @@ void main() {
 
 Abstract methods chỉ tồn tại bên trong `abstract classes`.
 
-```dart
+```java
 abstract class Doer {
   // Define instance variables and methods...
 
@@ -987,7 +987,7 @@ Phần này mô tả cách implement hoạt động của các toán tử với 
 `>=` | `*`  | `<<` | `==`
 `–`  | `%`  | `>>` |
 
-```dart
+```java
 class Vector {
   final int x, y;
 
@@ -1023,7 +1023,7 @@ void main() {
 
 Sử dụng `abstract` modifier để khai báo một *abstract class*—Một class không thể tạo instance. Abstract classes thường được sử dụng để định nghĩa *interfaces*. Tuy nhiên nếu bạn muốn tạo instance từIf you want your abstract class to appear to be instantiable, define a factory constructor.
 
-```dart
+```java
 // This class is declared abstract and thus
 // can't be instantiated.
 abstract class AbstractContainer {
@@ -1037,7 +1037,7 @@ abstract class AbstractContainer {
 
 Mỗi class trong Dart ngầm định nghĩa một interface chứa toàn bộ các instance member của class đó. Dị vl, abstract thì có keyword còn interface thì méo ko 🤣
 
-```dart
+```java
 // A person. The implicit interface contains greet().
 // A person. The implicit interface contains greet().
 class Person {
@@ -1067,18 +1067,18 @@ void main() {
 ```
 Nếu như class `Impostor` không khai báo method `greet` thì chúng ta sẽ nhận quả đắng sau
 
-```terminal
+```Bash
 Error: The non-abstract class 'Impostor' is missing implementations for these members: 'greet'.
 ```
 Dart hỗ trợ đa kế thừa
-```dart
+```java
 class Point implements Comparable, Location {...}
 ```
 ### Extending a class
 
 Sử dụng `extends` để tạo ra subclass, và `super` để trỏ tới superclass:
 
-```dart
+```java
 class Television {
   void turnOn() {
     _illuminateDisplay();
@@ -1102,7 +1102,7 @@ class SmartTelevision extends Television {
 
 Subclasses có thể override (ghi đè) instance methods, getters, và setters. Chúng ta sử dụng từ khoá `@override` để chỉ định methods, ... bị ghi đè:
 
-```dart
+```java
 class SmartTelevision extends Television {
   @override
   void turnOn() {...}
@@ -1112,7 +1112,7 @@ class SmartTelevision extends Television {
 
 Để thu hẹp (siết chặt) kiểu của method parameter hoặc instance variable hay còn gọi là `type safe`, bạn có thể sử dụng từ khoá `covariant`:
 
-```dart
+```java
 class Animal {
   String name;
 
@@ -1153,7 +1153,7 @@ void main() {
 
 Hãy ghi đè phương thức `noSuchMethod()` trong trường hợp bạn muốn bắt các trường hợp người dùng truy cập method hoặc variable không tồn tại 😎
 
-```dart
+```java
 class A {
   // Unless you override noSuchMethod, using a
   // non-existent member results in a NoSuchMethodError.
@@ -1171,13 +1171,13 @@ class A {
 
 Để khai báo một kiểu *enumerations*, ta sử dụng từ khoá `enum`:
 
-```dart
+```java
 enum Color { red, green, blue }
 ```
 
 Mỗi giá trị bên trong `enum` đều có method `index` getter, trả về vị trí của chúng (0-based array):
 
-```dart
+```java
 assert(Color.red.index == 0);
 assert(Color.green.index == 1);
 assert(Color.blue.index == 2);
@@ -1185,16 +1185,16 @@ assert(Color.blue.index == 2);
 
 Để lấy ra toàn bộ các giá trị trong enum, chúng ta sử dụng enum’s `values` constant.
 
-```dart
+```java
 List<Color> colors = Color.values;
 assert(colors[2] == Color.blue);
 ```
 
 ### Adding features to a class: mixins
 
-Mixin là một tính năng tương tự với [trait]() trong php, ta sử dụng `withth` keywords và theo sau nó là một hoặc nhiều mixin names.
+Mixin là một tính năng tương tự với `trait` trong php, ta sử dụng `withth` keywords và theo sau nó là một hoặc nhiều mixin names.
 
-```dart
+```java
 class Musician extends Performer with Musical {
   // ···
 }
@@ -1210,7 +1210,7 @@ class Maestro extends Person
 
 Để implement mixin cần tạo một class kế thừa Object, không có constructor và không gọi tới `super`:
 
-```dart
+```java
 abstract class Musical {
   bool canPlayPiano = false;
   bool canCompose = false;
@@ -1234,7 +1234,7 @@ Sử dụng `static` keyword để implement class-wide variables và methods.
 
 #### Static variables
 
-```dart
+```java
 class Queue {
   static const initialCapacity = 16;
   // ···
@@ -1249,7 +1249,7 @@ Biến static sẽ không được khởi tạo cho tới khi nó được sử 
 
 #### Static methods
 
-```dart
+```java
 import 'dart:math';
 
 class Point {
@@ -1283,13 +1283,13 @@ Nếu đã đọc các ghi chú phía trên thì ắt hẳn bạn đã biết t�
 Lợi ích:
 
 - Code sinh ra tốt hơn nếu được chỉ định đúng kiểu của kết quả.
-    ```dart
+    ```java
     var names = List<String>();
     names.addAll(['Seth', 'Kathy', 'Lars']);
     names.add(42); // Error
     ```
 - Sử dụng generic giúp giảm code duplication.
-    ```dart
+    ```java
     abstract class ObjectCache {
       Object getByKey(String key);
       void setByKey(String key, Object value);
@@ -1300,7 +1300,7 @@ Lợi ích:
     }
     ```
 2 class trên có thể thay bằng một class tương đương
-    ```dart
+    ```java
     abstract class Cache<T> {
       T getByKey(String key);
       void setByKey(String key, T value);
@@ -1312,7 +1312,7 @@ Theo quy ước, kiểu bên trong `<…>` là những chữ cái như: E, T, S,
 
 List và map đều có thể parameterized. `<type>` (cho lists) và `<keyType, valueType>` (cho maps).
 
-```dart
+```java
 var names = <String>['Seth', 'Kathy', 'Lars'];
 var pages = <String, String>{
   'index.html': 'Homepage',
@@ -1325,7 +1325,7 @@ var pages = <String, String>{
 
 Dart hỗ trợ lập trình viên chỉ định rõ một hoặc nhiều kiểu khi sử dụng constructor:
 
-```dart
+```java
 var names = List<String>();
 names.addAll(['Seth', 'Kathy', 'Lars']);
 var nameSet = Set<String>.from(names);
@@ -1340,7 +1340,7 @@ views[0] = View(0);
 
 ### Generic collections and the types they contain
 
-```dart
+```java
 var names = List<String>();
 names.addAll(['Seth', 'Kathy', 'Lars']);
 print(names is List<String>); // true
@@ -1353,7 +1353,7 @@ Ngược lại, generic trong Java sử dụng *erasure* (xoá bỏ), điều n�
 
 Khi code một generic type, bạn có thể muốn giới hạn các kiểu parameters của nó. Khi đó hãy sử dụng `extends`.
 
-```dart
+```java
 class Foo<T extends SomeBaseClass> {
   // Implementation goes here...
   String toString() => "Instance of 'Foo<$T>'";
@@ -1364,21 +1364,21 @@ class Extender extends SomeBaseClass {...}
 
 Hoàn toàn OK nếu bạn sử dụng `SomeBaseClass` hoặc bất kỳ subclasses nào của nó:
 
-```dart
+```java
 var someBaseClassFoo = Foo<SomeBaseClass>();
 var extenderFoo = Foo<Extender>();
 ```
 
 hoặc không một kiểu nào cả:
 
-```dart
+```java
 var foo = Foo();
 print(foo); // Instance of 'Foo<SomeBaseClass>'
 ```
 
 Nếu bạn chỉ định một kiểu non-`SomeBaseClass` sẽ có lỗi:
 
-```dart
+```java
 var foo = Foo<Object>();
 ```
 
@@ -1386,7 +1386,7 @@ var foo = Foo<Object>();
 
 Vào lúc khởi tạo, Dart’s generic giới hạn trong classes.
 
-```dart
+```java
 T first<T>(List<T> ts) {
   // Do some initial work or error checking, then...
   T tmp = ts[0];
@@ -1404,28 +1404,28 @@ Kiểu generic parameter trong `first (<T>)` cho phép bạn sử kiểu argumen
 **Chi tiết hơn để khai báo một generic methods**
 
 - Kiểu parameter của generic methods được liệt kê ngay sau tên của method/function và bên trong `<>`
-    ```dart
+    ```java
     /// 2 kiểu của parameters, [K] và [V].
     Map<K, V> singletonMap<K, V>(K key, V value) {
       return <K, V>{ key, value };
     }
     ```
 - Trong trường hợp kiểu là class, bạn có thể thêm giới hạn cho nó
-    ```dart
+    ```java
     /// Danh sách 2 số kiểu [T] dẫn xuất từ kiểu num.
     T sumPair<T extends num>(List<T> items) {
       return items[0] + items[1];
     }
     ```
 - Class methods (*instance* và *static*) có thể khai báo generic parameters theo cách tương tự:
-    ```dart
+    ```java
     class C {
       static int f<S, T>(int x) => 3;
       int m<S, T>(int x) => 3;
     }
     ```
 - Generic method với tư cách là function-typed parameters, local functions, và function expressions:
-    ```dart
+    ```java
     /// Truyền vào generic method là một [callback] parameter.
     void functionTypedParameter(T callback<T>(T thing)) {}
 
@@ -1452,13 +1452,13 @@ Libraries có thể được đóng gói và sử dụng thông qua công cụ [
 
 Sử dụng từ khoá `import` để chỉ định phạm vi namespace sẽ sử dụng của một library
 
-```dart
+```java
 import 'dart:html';
 ```
 
 Với các thư viện built-in thì URI có scheme `dart:`, còn với các thư viện khác ta sử dụng system path hoặc scheme `package:`
 
-```dart
+```java
 import 'package:test/test.dart';
 ```
 
@@ -1466,7 +1466,7 @@ import 'package:test/test.dart';
 
 Để tránh conflict khi import, ta dùng alias:
 
-```dart
+```java
 If you import two libraries that have conflicting identifiers, then you can specify a prefix for one or both libraries. For example, if library1 and library2 both have an Element class, then you might have code like this:
 
 import 'package:lib1/lib1.dart';
@@ -1483,7 +1483,7 @@ lib2.Element element2 = lib2.Element();
 
 Import một phần của library:
 
-```dart
+```java
 // Import only foo.
 import 'package:lib1/lib1.dart' show foo;
 
@@ -1501,13 +1501,13 @@ import 'package:lib2/lib2.dart' hide foo;
 
 Để lazily load một library, bạn cần import chúng bằng cú pháp `deferred as`.
 
-```dart
+```java
 import 'package:greetings/hello.dart' deferred as hello;
 ```
 
 Khi bạn cần sử dụng library, gọi hàm `loadLibrary()` qua định danh của chúng:
 
-```dart
+```java
 Future greet() async {
   await hello.loadLibrary();
   hello.printGreeting();
@@ -1537,13 +1537,13 @@ Khi bạn muốn kết quả thu được hoàn thành trong tương lai (Future
 
 Code sử dụng `async` và `await` là bất đồng bộ, nhưng hầu như chúng giống như các đoạn code xử lý đồng bộ. Ví dụ, đoạn code sau sử dụng `await` để chờ kết quả của xử lý từ function bất đồng bộ:
 
-```dart
+```java
 await lookUpVersion();
 ```
 
 Để dùng `await` thì code bắt buộc phải nằm trong `async function`
 
-```dart
+```java
 Future checkVersion() async {
   var version = await lookUpVersion();
   // Do something with version
@@ -1552,7 +1552,7 @@ Future checkVersion() async {
 
 Sử dụng `try`, `catch`, và `finally` để xử lý errors & cleanup trong code có sử dụng `await`:
 
-```dart
+```java
 try {
   version = await lookUpVersion();
 } catch (e) {
@@ -1564,7 +1564,7 @@ try {
 
 **Nếu bạn gặp lỗi `compile-time` khi sử dụng `await`, hãy đảm bảo răng bạn đang sử dụng `await` bên trong `async` function.** Ví dụ sau sử dụng `await` trong app’s `main()` function, body của `main()` phải đi kèm với keyword `async`:
 
-```dart
+```java
 Future main() async {
   checkVersion();
   print('In main: version is ${await lookUpVersion()}');
@@ -1575,7 +1575,7 @@ Future main() async {
 
 Ví dụ chuyển từ function đồng bộ sang function bất đồng bộ:
 
-```dart
+```java
 String lookUpVersion() => '1.0.0';
 
 Future<String> lookUpVersion() async => '1.0.0';
@@ -1587,7 +1587,7 @@ Khi bạn cần lấy giá trị từ một Stream, bạn có 2 lựa chọn
 - Sử dụng `async` và *asynchronous for loop* (`await for`).
 - Sử dụng [Stream](https://www.dartlang.org/guides/libraries/library-tour#stream) API.
 
-```dart
+```java
 await for (varOrType identifier in expression) {
   // Executes each time the stream emits a value.
 }
@@ -1604,14 +1604,14 @@ await for (varOrType identifier in expression) {
 
 Dart hỗ trợ 2 loại built-in generator functions:
 - Synchronous generator: Trả về [Iterable](https://api.dartlang.org/dev/dart-core/Iterable-class.html) object.
-  ```dart
+  ```java
   Iterable<int> naturalsTo(int n) sync* {
     int k = 0;
     while (k < n) yield k++;
   }
   ```
 - Asynchronous generator: Trả về [Stream](https://api.dartlang.org/dev/dart-async/Stream-class.html) object.
-  ```dart
+  ```java
   Stream<int> asynchronousNaturalsTo(int n) async* {
     int k = 0;
     while (k < n) yield k++;
@@ -1622,7 +1622,7 @@ Dart hỗ trợ 2 loại built-in generator functions:
 
 Để có thể gọi Dart class như function, ta implement phương thức call().
 
-```dart
+```java
 class WannabeFunction {
   call(String a, String b, String c) => '$a $b $c!';
 }
@@ -1633,7 +1633,7 @@ main() {
   print('$out');
 }
 ```
-```terminal
+```Bash
 Hi there, gang!
 ```
 
@@ -1653,7 +1653,7 @@ Trong Dart, mọi thứ đều là object. *typedef*, hoặc *function-type* ali
 
 Đoạn code sau không sử dụng typedef, và thông tin về kiểu sẽ biến mất khi bạn gán `compare = f`, trong khi kiểu của `f` là `(Object, Object) → int `.
 
-```dart
+```java
 class SortedCollection {
   Function compare;
 
@@ -1676,7 +1676,7 @@ void main() {
 
 Hot fix sử dụng *typedef*
 
-```dart
+```java
 typedef Compare = int Function(Object a, Object b);
 
 class SortedCollection {
@@ -1699,7 +1699,7 @@ Với phiên bản Dart 2 hiện tại thì `typedefs` chỉ giới hạn sử d
 
 *typedef* cũng chỉ đơn giản là một alias, giúp chúng ta check kiểu của mỗi function:
 
-```dart
+```java
 typedef Compare<T> = int Function(T a, T b);
 
 int sort(int a, int b) => a - b;

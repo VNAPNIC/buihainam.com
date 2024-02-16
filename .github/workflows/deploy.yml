@@ -1,9 +1,14 @@
 name: Build documentation
 
 on:
+  # If specified, the workflow will be triggered automatically once you push to the `main` branch.
+  # Replace `main` with your branch’s name
   push:
     branches: ["main"]
+  # Specify to run a workflow manually from the Actions tab on GitHub
+  workflow_dispatch:
 
+# Gives the workflow permissions to clone the repo and create a page deployment
 permissions:
   id-token: write
   pages: write
@@ -20,30 +25,30 @@ env:
   ALGOLIA_ARTIFACT: algolia-indexes-HI.zip
 
 jobs:
-  construir:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repositorio
-        uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - name: Construir documentación de Writerside usando Docker
+      - name: Build Writerside docs using Docker
         uses: JetBrains/writerside-github-action@v4
         with:
           instance: ${{ env.INSTANCE }}
           artifact: ${{ env.ARTIFACT }}
           docker-version: ${{ env.DOCKER_VERSION }}
 
-      - name: Subir artefacto
-        uses: actions/upload-artifact@v4
+      - name: Upload documentation
+        uses: actions/upload-artifact@v3
         with:
           name: docs
           path: |
             artifacts/${{ env.ARTIFACT }}
             artifacts/report.json
-          retention-days: 7
+            retention-days: 7
 
-      - name: Subir algolia-indexes
+      # Add the step below to upload Algolia indexes
+      - name: Upload algolia-indexes
         uses: actions/upload-artifact@v3
         with:
           name: algolia-indexes
@@ -52,47 +57,46 @@ jobs:
 
   # Add the job below and artifacts/report.json on Upload documentation step above
   # if you want to fail the build when documentation contains errors
-  comprobar:
+  test:
     # Requires build job results
-    needs: construir
+    needs: build
     runs-on: ubuntu-latest
-
     steps:
-      - name: Descargar artefactos
-        uses: actions/download-artifact@v4
+      - name: Download artifacts
+        uses: actions/download-artifact@v1
         with:
           name: docs
           path: artifacts
 
-      - name: Comprobar documentación
+      - name: Test documentation
         uses: JetBrains/writerside-checker-action@v1
         with:
           instance: ${{ env.INSTANCE }}
 
-  publicar:
+  deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    # Requires the build job results
-    needs: comprobar
+    # Requires the test job results
+    needs: test
     runs-on: ubuntu-latest
     steps:
-      - name: Descargar artefacto
-        uses: actions/download-artifact@v4
+      - name: Download artifact
+        uses: actions/download-artifact@v3
         with:
           name: docs
 
-      - name: Descomprimir artefacto
+      - name: Unzip artifact
         run: unzip -O UTF-8 -qq ${{ env.ARTIFACT }} -d dir
 
-      - name: Configurar Pages
+      - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      - name: Subir artefacto
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: dir
 
-      - name: Implementar en GitHub Pages
+      - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

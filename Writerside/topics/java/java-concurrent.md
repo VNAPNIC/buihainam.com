@@ -148,22 +148,33 @@ deadlock**.
 Các ảnh **benchmark** bên dưới được đo bởi phiên bản Java 11, theo throughput, Code đo hiệu năng
 
 ![benchmark-result](results-1-1.png)
+
 Một luồng đọc và luồng ghi
 
 ![benchmark-result](results-1-19.png)
+
 Một luồng đọc và 19 luồng ghi
 
 ![benchmark-result](results-10-10.png)
+
 ![benchmark-result](results-128-128.png)
+
 ![benchmark-result](results-16-16.png)
+
 ![benchmark-result](results-16-4.png)
+
 ![benchmark-result](results-19-1.png)
+
 19 luồng đọc và một luồng ghi.
 
 ![benchmark-result](results-2-2.png)
+
 ![benchmark-result](results-4-16.png)
+
 ![benchmark-result](results-4-4.png)
+
 ![benchmark-result](results-5-5.png)
+
 ![benchmark-result](results-64-64.png)
 
 ## 6. Segment Lock

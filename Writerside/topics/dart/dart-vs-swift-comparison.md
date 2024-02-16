@@ -26,7 +26,7 @@ Các so sánh sau đây được thực hiện trên các tính năng chính c�
 
 Dart:
 
-```dart
+```java
 String name;
 int age;
 double height;
@@ -34,7 +34,7 @@ double height;
 
 Switf:
 
-```switf
+```Swift
 var name = 'Andrea';
 var age = 34;
 var height = 1.84;
@@ -44,7 +44,7 @@ var height = 1.84;
 
 Dart:
 
-```dart
+```java
 var name = 'Andrea';
 var age = 34;
 var height = 1.84;
@@ -52,7 +52,7 @@ var height = 1.84;
 
 Switf:
 
-```switf
+```Swift
 var name = "Andrea"
 var age = 34
 var height = 1.84
@@ -65,7 +65,7 @@ var height = 1.84
 
 Có thể được viết như này trong Dart:
 
-```dart
+```java
 var arguments = {'argA': 'hello', 'argB': 42}; // Map<String, Object>
 ```
 
@@ -104,7 +104,7 @@ Khi khai báo variables kiểu Mutable, thì cả hai ngôn ngữ đều sử d�
 
 Dart
 
-```dart
+```java
 var a = 10; // int
 a = 20; // ok
 ```
@@ -122,7 +122,7 @@ Khi khai báo variables kiểu Immutable, Dart sử dụng `final`, và Swift s�
 
 Dart
 
-```dart
+```java
 final a = 10;
 a = 20; // 'a': a final variable, can only be set once.
 ```
@@ -167,7 +167,7 @@ Bước đầu so sánh, chúng ta sẽ khởi tạo các functions không có a
 
 Trong Dart, các kiểu trả về được đặt trước tên của method:
 
-```dart
+```java
 void foo();
 int bar();
 ```
@@ -194,7 +194,7 @@ Cả hai ngôn ngữ đều hỗ trợ ***named*** và ***un-named*** parameters
 
 Trong Dart, chúng ta định nghĩa named parameters trong dấu (`{}`):
 
-```dart
+```java
 void foo({String name, int age, double height});
 foo(name: 'Andrea', age: 34, height: 1.84);
 ```
@@ -210,7 +210,7 @@ foo(name: "Andrea", age: 34, height: 1.84)
 
 Trong Dart, chúng ta định nghĩa un-named parameters bằng cách bỏ dấu (`{}`):
 
-```dart
+```java
 void foo(String name, int age, double height);
 foo('Andrea', 34, 1.84);
 ```
@@ -240,7 +240,7 @@ foo(name: "Andrea", age: 34) // name: "Andrea", age: 34, height: 0.0
 
 Trong Dart, optional parameters có thể là positional hoặc named, nhưng không thể là cả 2.
 
-```dart
+```java
 // positional optional parameters
 void foo(String name, [int age = 0, double height = 0.0]);
 foo('Andrea', 34); // name: 'Andrea', age: 34, height: 0.0

@@ -53,7 +53,7 @@ Kiểm tra trạng thái và phiên bản của MySQL:
 ```
 [root@localhost ~]# systemctl status mysqld
 ```
-<img src = "https://i.imgur.com/F63HGZp.png">
+<img src = "https://i.imgur.com/F63HGZp.png" />
 
 ```
 [root@localhost ~]# mysql -V

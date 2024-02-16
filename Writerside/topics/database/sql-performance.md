@@ -304,6 +304,7 @@ Với dạng **Join** này chúng ta chỉ cần đánh **index** tại **where*
 trường cần **join** là **không cần thiết.**
 
 Ta tạo **index** sau và sẽ có một **query plan** :
+
 ![hash-join](Hash_join.png)
 
 Vậy việc biết được **database** bạn đang sử dụng đang sử dụng **join algorithms** nào là điều rất cần thiết để biết được cách nâng cao hiệu năng của
@@ -348,6 +349,7 @@ Với **Mysql** version **5.7** thì bạn làm ơn đừng sử dụng câu **q
  SELECT film_id FROM sakila.film_actor WHERE actor_id = 1);
 ```
 Vì nếu bạn mong muốn **Mysql 5.7** se thực hiện **sub query** trong lệnh **IN** trước thì nó làm ngược lại đó. Hãy nhìn cách nó làm
+
 ![mysql-5.7-in](mysql_in_5.7.png)
 
 Nó sẽ quét hết bảng `film` trước sau đó với thực hiện so sánh với **sub query**. Nếu dùng **Mysql 5.7** thì bạn nên thay đổi nếu có

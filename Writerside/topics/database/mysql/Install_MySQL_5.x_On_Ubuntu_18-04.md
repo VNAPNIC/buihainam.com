@@ -17,7 +17,7 @@ $ sudo dpkg -i mysql-apt-config_0.8.14-1_all.deb
 
 Sau khi chạy lệnh, một bảng tùy chọn hiện ra cho phép ta lựa chọn repository cho phiên bản mà ta muốn cài và một số tùy chọn khác, mặc định sẽ là phiên bản mới nhất. ta lựa chọn phiên bản 5.x phù hợp và chon `Ok`.
 
-<img src="../../../MySQL/docs/Images/Ubuntu-18.04_Select_Repository_For_MySQL-5.x.png">
+![](Ubuntu-18.04_Select_Repository_For_MySQL-5.x.png)
 
 Sau đó ta cần cập nhật lại hệ thống
 
@@ -34,10 +34,9 @@ $ sudo apt-get install -y mysql-server
 
 Trong quá trình cài đặt MySQL, một bảng tùy chọn hiện ra cho phép ta đặt mật khẩu cho tài khoản `root`, ta sẽ lần lượt nhập mật khẩu và xác nhận lại mật khẩu hoặc có thể ấn `Enter` để bỏ qua vì ta có thể đặt mật khẩu ở các bước sau.
 
-<img src="../../../MySQL/docs/Images/Ubuntu-18.04_MySQL-5.x_New_Password.png">
+![](Ubuntu-18.04_MySQL-5.x_New_Password.png)
 
-<img src="../../../MySQL/docs/Images/Ubuntu-18.04_MySQL-5.x_Re-New_Password.png">
-
+![](Ubuntu-18.04_MySQL-5.x_Re-New_Password.png)
 
 ### Khởi động MySQL và bật MySQL khởi động cùng hệ thống
 Khởi động MySQL và cho phép MySQL khởi động cùng hệ thống

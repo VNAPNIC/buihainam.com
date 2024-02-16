@@ -70,7 +70,7 @@ Tên Database: `classicmodels`
 
 Mô hình:
 
-<img src = "https://i.imgur.com/mNOro37.png">
+![](https://i.imgur.com/mNOro37.png)
 
 - `customers`: lưu trữ dữ liệu của khách hàng.
 - `products`: lưu trữ một danh sách các mô hình quy mô xe.
@@ -144,30 +144,30 @@ YEAR (M): Lưu trữ một năm ở định dạng 2 chữ số hoặc 4 chữ s
 
 ## Querying Data
 
-### Chức năng
+### Chức năng {id="ch-c-n-ng_2"}
 
 `SELECT` : được sử dụng để truy vấn dữ liệu từ một hoặc nhiều bảng.
 
-### Cú pháp cơ bản
+### Cú pháp cơ bản {id="c-ph-p-c-b-n_1"}
 
 ```sql
 SELECT select_list
 FROM table_name;
 ```
 
-### Thứ tự đánh giá của SQL
+### Thứ tự đánh giá của SQL {id="th-t-nh-gi-c-a-sql_1"}
 
-<img src = "https://i.imgur.com/sIqesKh.png">
+<img src = "https://i.imgur.com/sIqesKh.png" />
 
 Tức là SQL sẽ xét `FROM` trước rồi đến `SELECT`
 
-### Ví dụ
+### Ví dụ {id="v-d_1"}
 
 Ta sẽ sử dụng bảng `employees` để ví dụ về sử dụng `SELECT`:
 
-<img src = "https://i.imgur.com/KWTyRMo.png">
+<img src = "https://i.imgur.com/KWTyRMo.png"/>
 
-<img src = "https://i.imgur.com/RjeusXU.png">
+<img src = "https://i.imgur.com/RjeusXU.png"/>
 
 #### 1. Lấy dữ liệu từ 1 cột:
 
@@ -180,7 +180,7 @@ FROM employees;
 
 **Kết quả**
 
-<img src = "https://i.imgur.com/ylhGyyH.png">
+<img src = "https://i.imgur.com/ylhGyyH.png"/>
 
 #### 2. Lấy dữ liệu từ nhiều cột
 
@@ -197,7 +197,7 @@ FROM
 
 **Kết quả**
 
-<img src = "https://i.imgur.com/c5TAbO6.png">
+<img src = "https://i.imgur.com/c5TAbO6.png"/>
 
 #### 3. Lấy tất cả dữ liệu của bảng:
 
@@ -208,9 +208,9 @@ FROM employees;
 
 **Kết quả**
 
-<img src = "https://i.imgur.com/RjeusXU.png">
+<img src = "https://i.imgur.com/RjeusXU.png"/>
 
-#### **Chú ý**
+#### **Chú ý** {id="ch_1"}
 
 Sử dụng `SELECT *` không nên được sử dụng bừa bãi vì một số lý do sau:
 
@@ -223,11 +223,11 @@ Sử dụng `SELECT *` không nên được sử dụng bừa bãi vì một s�
 
 ## Sorting Data
 
-### Chức năng
+### Chức năng {id="ch-c-n-ng_1"}
 
 Dùng để sắp xếp các dữ liệu được trả về từ truy vấn `SELECT`.
 
-### Cú pháp
+### Cú pháp {id="c-ph-p_1"}
 
 ```sql
 SELECT 
@@ -245,17 +245,17 @@ Trong đó:
 - `ASC`: (ascending) là sắp xếp tăng dần
 - `DESC`: (descending) là sắp xếp giảm dần
 
-### Thứ tự đánh giá của SQL
+### Thứ tự đánh giá của SQL {id="th-t-nh-gi-c-a-sql_2"}
 
-<img src ="https://i.imgur.com/NPKtwpT.png">
+<img src ="https://i.imgur.com/NPKtwpT.png"/>
 
 `ORDER BY` luôn được đánh giá sau `FROM` và `SELECT`.
 
-### Ví dụ
+### Ví dụ {id="v-d_2"}
 
 Sử dụng bảng `customers`
 
-<img src = "https://i.imgur.com/3KHeatZ.png">
+<img src = "https://i.imgur.com/3KHeatZ.png"/>
 
 #### 1. Sắp xếp dữ liệu theo 1 cột
 
@@ -273,7 +273,7 @@ ORDER BY
 
 Kết quả:
 
-<img src = "https://i.imgur.com/d4D4dxt.png">
+<img src = "https://i.imgur.com/d4D4dxt.png"/>
 
 #### 2. Sắp xếp dữ liệu theo nhiều cột
 
@@ -293,13 +293,13 @@ ORDER BY
 
 Kết quả:
 
-<img src = "https://i.imgur.com/i8ND5EU.png">
+<img src = "https://i.imgur.com/i8ND5EU.png"/>
 
 #### 3. Sắp xếp kết quả của một phép tính
 
 Sử dụng bảng `orderdetails`
 
-<img src = "https://i.imgur.com/XvbPT6O.png">
+<img src = "https://i.imgur.com/XvbPT6O.png"/>
 
 Sắp xếp dựa trên phép tính `quantityOrdered` * `priceEach`
 
@@ -316,7 +316,7 @@ ORDER BY
 
 Kết quả:
 
-<img src = "https://i.imgur.com/Y6ZUp18.png">
+<img src = "https://i.imgur.com/Y6ZUp18.png"/>
 
 Để kết quả truy vấn dễ đọc hơn, ta có thể gán cột `quantityOrdered * priceEach` bằng tên khác ngắn hơn, sử dụng `AS`:
 
@@ -332,7 +332,7 @@ ORDER BY subtotal DESC;
 
 Kết quả:
 
-<img src ="https://i.imgur.com/nYHB4me.png">
+<img src ="https://i.imgur.com/nYHB4me.png"/>
 
 #### 4. Sắp xếp tùy chỉnh
 
@@ -340,7 +340,7 @@ Sử dụng `FIELD()`.
 
 Ta sử dụng bảng `order`:
 
-<img src = "https://i.imgur.com/KGBzomu.png">
+<img src = "https://i.imgur.com/KGBzomu.png"/>
 
 Bạn muốn sắp xếp đơn hàng theo thứ tự trạng thái như sau:
 
@@ -369,17 +369,17 @@ ORDER BY
 
 Kết quả:
 
-<img src ="https://i.imgur.com/AKYreHi.png">
+<img src ="https://i.imgur.com/AKYreHi.png"/>
 
 ------------------------------------------------------------------------
 
 ## `WHERE`
 
-### Chức năng
+### Chức năng {id="ch-c-n-ng_3"}
 
 `WHERE` : Dùng để lọc kết quả truy vấn(SELECT), cập nhật(UPDATE), xóa (DELETE)
 
-### Cú pháp cơ bản
+### Cú pháp cơ bản {id="c-ph-p-c-b-n_3"}
 
 ```sql
 SELECT 
@@ -396,13 +396,13 @@ WHERE
 
 ### Thứ tự đánh giá SQL
 
-<img src = "https://i.imgur.com/7bSN5JH.png">
+<img src = "https://i.imgur.com/7bSN5JH.png"/>
 
 ### Cách sử dụng
 
 Ta sẽ sử dụng bảng `employees` để thực hiện
 
-<img src = "https://i.imgur.com/KWTyRMo.png">
+<img src = "https://i.imgur.com/KWTyRMo.png"/>
 
 #### 1. Sử dụng `WHERE` với toán tử `=`:
 
@@ -421,7 +421,7 @@ WHERE
 
 Kết quả:
 
-<img src = "https://i.imgur.com/4sNW9JU.png">
+<img src = "https://i.imgur.com/4sNW9JU.png"/>
 
 #### 2. Sử dụng `WHERE` với toán tử `AND`:
 
@@ -442,7 +442,7 @@ WHERE
 
 Kết quả:
 
-<img src = "https://i.imgur.com/mlrPOXn.png">
+<img src = "https://i.imgur.com/mlrPOXn.png"/>
 
 #### 3. Sử dụng `WHERE` với toán tử `OR`:
 
@@ -463,7 +463,7 @@ WHERE
 
 Kết quả:
 
-<img src = "https://i.imgur.com/HLZTo9K.png">
+<img src = "https://i.imgur.com/HLZTo9K.png"/>
 
 #### 4. Sử dụng `WHERE` với toán tử `BETWEEN`:
 
@@ -484,7 +484,7 @@ where
 
 Kết quả:
 
-<img src = "https://i.imgur.com/2qaVtsx.png">
+<img src = "https://i.imgur.com/2qaVtsx.png"/>
 
 #### 5. Sử dụng `WHERE` với toán tử `LIKE`:
 
@@ -502,7 +502,7 @@ WHERE
 
 Kết quả:
 
-<img src = "https://i.imgur.com/b9PsZWA.png">
+<img src = "https://i.imgur.com/b9PsZWA.png"/>
 
 #### 6. Sử dụng `WHERE` với toán tử `IN`:
 
@@ -523,7 +523,7 @@ WHERE
 
 Kết quả:
 
-<img src = "https://i.imgur.com/DU0YwSD.png">
+<img src = "https://i.imgur.com/DU0YwSD.png"/>
 
 #### 7. Sử dụng `WHERE` với `IS NULL`
 
@@ -544,7 +544,7 @@ WHERE
 
 Kết quả:
 
-<img src = "https://i.imgur.com/x58yLaq.png">
+<img src = "https://i.imgur.com/x58yLaq.png"/>
 
 #### 8. Sử dụng `WHERE` với toán tử so sánh
 
@@ -572,17 +572,17 @@ WHERE
 
 Kết quả:
 
-<img src = "https://i.imgur.com/HqgEH4i.png">
+<img src = "https://i.imgur.com/HqgEH4i.png"/>
 
 ------------------------------------------------------------------------
 
 ## `SELECT  DISTINCT`
 
-### Chức năng
+### Chức năng {id="ch-c-n-ng_4"}
 
 `DISTINCT`  dùng để loại bỏ các hàng trùng lặp trong tập kết quả truy vấn.
 
-### Cú pháp cơ bản
+### Cú pháp cơ bản {id="c-ph-p-c-b-n_4"}
 
 ```sql
 SELECT DISTINCT
@@ -591,11 +591,11 @@ FROM
     table_name;
 ```
 
-### Cách sử dụng
+### Cách sử dụng {id="c-ch-s-d-ng_1"}
 
 Ta sẽ sử dụng bảng `employees` để thử truy vấn.
 
-<img src = "https://i.imgur.com/KWTyRMo.png">
+<img src = "https://i.imgur.com/KWTyRMo.png"/>
 
 Trước tiên, ta sẽ thử truy vấn không có `DISTINCT`:
 
@@ -610,7 +610,7 @@ ORDER BY
 
 Kết quả:
 
-<img src = "https://i.imgur.com/CWpiRkQ.png">
+<img src = "https://i.imgur.com/CWpiRkQ.png"/>
 
 -> Có những tên trùng nhau
 
@@ -627,7 +627,7 @@ ORDER BY
 
 Kết quả:
 
-<img src = "https://i.imgur.com/WOZfiS2.png">
+<img src = "https://i.imgur.com/WOZfiS2.png"/>
 
 -> Mỗi tên chỉ xuất hiện một lần. Không có trùng lặp.
 
@@ -640,12 +640,12 @@ Kết quả:
 
 ## `IN`
 
-### Chức năng
+### Chức năng {id="ch-c-n-ng_5"}
 
 `IN` dùng để xác định xem một giá trị được chỉ định có khớp với giá trị nào trong danh sách truy vấn hoặc truy vấn con(
 subquery) hay không.
 
-### Cú pháp cơ bản
+### Cú pháp cơ bản {id="c-ph-p-c-b-n_5"}
 
 ```sql
 SELECT 
@@ -656,13 +656,13 @@ WHERE
     (expr|column_1) IN ('value1','value2',...);
 ```
 
-### Cách sử dụng
+### Cách sử dụng {id="c-ch-s-d-ng_2"}
 
 #### 1. Sử dụng `IN` kiếm tra giá trị trong danh sách truy vấn:
 
 Ta sẽ sử dụng bảng `employees` để thực hiện
 
-<img src = "https://i.imgur.com/KWTyRMo.png">
+<img src = "https://i.imgur.com/KWTyRMo.png"/>
 
 Lọc ra những nhân viên có `officeCode` có giá trị là 1 và 3.
 
@@ -679,7 +679,7 @@ WHERE
 
 Kết quả:
 
-<img src = "https://i.imgur.com/DU0YwSD.png">
+<img src = "https://i.imgur.com/DU0YwSD.png"/>
 
 #### 2. Sử dụng `IN` trong subquery:
 
@@ -688,7 +688,7 @@ danh sách các giá trị từ một hay nhiều bảng và sử dụng chúng 
 
 Ta sẽ lấy 2 bảng `orders` và `orderDetails`
 
-<img src = "https://i.imgur.com/WC2fGAf.png">
+<img src = "https://i.imgur.com/WC2fGAf.png"/>
 
 Ta sẽ tìm các đơn hàng có tổng giá trị lớn hơn 60000.
 
@@ -715,7 +715,7 @@ WHERE orderNumber IN
 
 Kết quả:
 
-<img src = "https://i.imgur.com/XCY86Ao.png">
+<img src = "https://i.imgur.com/XCY86Ao.png"/>
 
 Truy vấn trên có thể được chia thành 2 truy vấn riêng biệt:
 
@@ -731,7 +731,7 @@ GROUP BY orderNumber
 HAVING SUM(quantityOrdered * priceEach) > 60000;
 ```
 
-<img src = "https://i.imgur.com/PLrpHPQ.png">
+<img src = "https://i.imgur.com/PLrpHPQ.png"/>
 
 **Truy vấn 2:** Truy vấn 2 lấy dữ liệu từ đơn hàng
 
@@ -751,11 +751,11 @@ WHERE
 
 ## `LIKE`
 
-### Chức năng
+### Chức năng {id="ch-c-n-ng_6"}
 
 LIKE dùng để truy vấn dữ liệu dựa trên một mô hình cụ thể.
 
-### Cú pháp cơ bản
+### Cú pháp cơ bản {id="c-ph-p-c-b-n_6"}
 
 Toán tử `LIKE` là toán tử logic kiểm tra xem một chuỗi có chứa một mẫu đã chỉ định hay không.
 
@@ -787,7 +787,7 @@ WHERE
     productCode LIKE '%\_20%';
 ```
 
-<img src ="https://i.imgur.com/DhBZqr3.png">
+<img src ="https://i.imgur.com/DhBZqr3.png"/>
 
 Hoặc bạn có thể chỉ định một ký tự thoát khác, ví dụ: `$` bằng cách sử dụng mệnh đề `ESCAPE`:
 
@@ -801,17 +801,17 @@ WHERE
     productCode LIKE '%$_20%' ESCAPE '$';
 ```
 
-<img src = "https://i.imgur.com/zX0Jczd.png">
+<img src = "https://i.imgur.com/zX0Jczd.png"/>
 
 ------------------------------------------------------------------------
 
 ## `LIMIT`
 
-### Chức năng
+### Chức năng {id="ch-c-n-ng_7"}
 
 Dùng để hạn chế số lượng kết quả trả về bởi một truy vấn.
 
-### Cú pháp cơ bản
+### Cú pháp cơ bản {id="c-ph-p-c-b-n_7"}
 
 ```sql
 SELECT 
@@ -826,20 +826,20 @@ LIMIT [offset,] row_count;
 
 Hình ảnh minh họa:
 
-<img src = "https://i.imgur.com/D7GGCSv.png">
+<img src = "https://i.imgur.com/D7GGCSv.png"/>
 
 Khi bạn sử dụng mệnh đề LIMIT với một đối số, MySQL sẽ sử dụng đối số này để xác định số lượng hàng tối đa để trả về từ
 hàng đầu tiên của tập kết quả.
 
-### Thứ tự đánh giá của SQL
+### Thứ tự đánh giá của SQL {id="th-t-nh-gi-c-a-sql_3"}
 
-<img src = "https://i.imgur.com/Y9pY3lU.png">
+<img src = "https://i.imgur.com/Y9pY3lU.png"/>
 
-### Cách sử dụng
+### Cách sử dụng {id="c-ch-s-d-ng_3"}
 
 Ta sử dụng bảng `customers` để thực hiện.
 
-<img src = "https://i.imgur.com/O0o4sZq.png">
+<img src = "https://i.imgur.com/O0o4sZq.png"/>
 
 1. Lấy một số lượng nhất định có giá trị cao nhất hoặc thấp nhất
    Lấy ra 5 khách hàng có mức tín dụng cao nhất
@@ -857,7 +857,7 @@ LIMIT 5;
 
 Kết quả:
 
-<img src = "https://i.imgur.com/wm4XomD.png">
+<img src = "https://i.imgur.com/wm4XomD.png"/>
 
 2. Phân trang
    Khi bạn hiển thị dữ liệu trên các ứng dụng, bạn thường muốn chia các hàng thành các trang, trong đó mỗi trang chứa
@@ -872,7 +872,7 @@ thể, bạn có thể sử dụng mệnh đề LIMIT.
 SELECT COUNT(*) FROM customers;
 ```
 
-<img src = "https://i.imgur.com/UDR0cck.png">
+<img src = "https://i.imgur.com/UDR0cck.png"/>
 
 Giả sử mỗi trang có 10 hàng, để hiển thị 122 khách hàng, bạn có 13 trang. Trang thứ 13 cuối cùng chỉ chứa hai hàng.
 
@@ -889,7 +889,7 @@ ORDER BY customerName
 LIMIT 10;
 ```
 
-<img src = "https://i.imgur.com/PfHXAuF.png">
+<img src = "https://i.imgur.com/PfHXAuF.png"/>
 
 Truy vấn này sử dụng mệnh đề LIMIT để lấy các hàng của trang thứ hai bao gồm hàng 11 - 20:
 
@@ -903,7 +903,7 @@ ORDER BY customerName
 LIMIT 10, 10;
 ```
 
-<img src = "https://i.imgur.com/pmIivFj.png">
+<img src = "https://i.imgur.com/pmIivFj.png"/>
 
 3. Lấy giá trị cao nhất, thấp nhất thứ n:
 
@@ -927,7 +927,7 @@ ORDER BY
 LIMIT 2,1;
 ```
 
-<img src = "https://i.imgur.com/SETbfof.png">
+<img src = "https://i.imgur.com/SETbfof.png"/>
 
 Kiểm tra lại danh sách đầy đủ:
 
@@ -941,13 +941,13 @@ ORDER BY
     creditLimit DESC;
 ```
 
-<img src = "https://i.imgur.com/LxKVWU8.png">
+<img src = "https://i.imgur.com/LxKVWU8.png"/>
 
 ------------------------------------------------------------------------
 
 ## Table & Column Aliases
 
-### Chức năng
+### Chức năng {id="ch-c-n-ng_8"}
 
 MySQL Aliases dùng để cải thiện đọc của các truy vấn bằng cách đặt bí danh.
 
@@ -955,7 +955,7 @@ MySQL Aliases dùng để cải thiện đọc của các truy vấn bằng các
 
 Đôi khi các tên của cột thực tế dài và khó hiểu, vì vậy đặt bí danh cho cột là một ý tưởng hợp lí.
 
-#### Cú pháp
+#### Cú pháp {id="c-ph-p_3"}
 
 ```sql
 SELECT 
@@ -969,11 +969,11 @@ Nếu bí danh có dấu khoảng trắng thì ta sử dụng thêm dấu
 `descriptive name`
 ```
 
-#### Ví dụ
+#### Ví dụ {id="v-d_4"}
 
 Sử dụng bảng `employese`
 
-<img src = "https://i.imgur.com/CjSGH6D.png">
+<img src = "https://i.imgur.com/CjSGH6D.png"/>
 
 Truy vấn sau đây chọn tên và họ của nhân viên. Nó sử dụng hàm `CONCAT_WS ()` để ghép tên và họ thành tên đầy đủ.
 
@@ -984,7 +984,7 @@ FROM
     employees;
 ```
 
-<img src = "https://i.imgur.com/oAuCcDu.png">
+<img src = "https://i.imgur.com/oAuCcDu.png"/>
 
 
 Bảng kết quả tên cột nhìn dài và khó hiểu. Nên ta sẽ đặt bí danh cho nó:
@@ -996,7 +996,7 @@ FROM
    employees;
 ```
 
-<img src = "https://i.imgur.com/LGRY2H1.png">
+<img src = "https://i.imgur.com/LGRY2H1.png"/>
 
 Trong MySQL, bạn có thể sử dụng bí danh cột trong `ORDER BY`, `GROUP BY` và `HAVING` để chỉ cột.
 
@@ -1004,7 +1004,7 @@ Trong MySQL, bạn có thể sử dụng bí danh cột trong `ORDER BY`, `GROUP
 
 Cũng giống như cột, bạn có thể đặt bí danh cho bảng.
 
-#### Cú pháp
+#### Cú pháp {id="c-ph-p_4"}
 
 ```sql
 table_name AS table_alias
@@ -1012,7 +1012,7 @@ table_name AS table_alias
 
 Các bí danh cho bảng thường được sử dụng trong câu lệnh có chứa `INNER JOIN`, `LEFT JOIN`, `RIGHT JOIN`.
 
-#### Ví dụ
+#### Ví dụ {id="v-d_5"}
 
 Đặt `employese` bí danh bảng là e.
 
@@ -1022,7 +1022,7 @@ SELECT * FROM employees e;
 
 Sử dụng bảng `employese`. Truy vấn danh sách nhân viên sắp xếp theo `firstName`:
 
-<img src = "https://i.imgur.com/CjSGH6D.png">
+<img src = "https://i.imgur.com/CjSGH6D.png"/>
 
 ```sql
 SELECT 
@@ -1033,7 +1033,7 @@ FROM
 ORDER BY e.firstName;
 ```
 
-<img src = "https://i.imgur.com/vfBHx4S.png">
+<img src = "https://i.imgur.com/vfBHx4S.png"/>
 
 ------------------------------------------------------------------------
 
@@ -1045,7 +1045,7 @@ ngoài (`foreign key`). Vì vậy, dữ liệu từ 1 bảng không đầy đủ
 Để có thể có được dữ liệu đầy đủ ta cần `JOIN` các bảng lại với nhau để có được dữ liệu cần thiết.
 
 Ví dụ: Ta có 2 bảng dữ liệu `orders` và `orderdetails` liên kết với nhau bằng cột `orderNumber`.
-<img src ="https://i.imgur.com/egkouFP.png">
+<img src ="https://i.imgur.com/egkouFP.png"/>
 
 Để có thông tin đơn hàng hoàn chỉnh, ta cần truy vấn dữ liệu từ cả 2 bảng `orders` và `orderdetails`.
 Chính vì vậy nên chúng ta cần `JOIN`.
@@ -1064,12 +1064,12 @@ MySQL hỗ trợ các kiểu JOIN sau:
 Trong bài viết này, ta sẽ tìm hiểu cách sử dụng mệnh đề `INNER JOIN` để lấy dữ liệu từ nhiều bảng dựa trên các điều
 kiện.
 
-### Chức năng
+### Chức năng {id="ch-c-n-ng_9"}
 
 `INNER JOIN` khớp từng hàng trong 1 bảng với mỗi hàng trong bảng khác và cho phép bạn truy vấn các hàng có chứa các cột
 chung từ 2 bảng.
 
-### Cú pháp cơ bản
+### Cú pháp cơ bản {id="c-ph-p-c-b-n_8"}
 
 ```sql
 SELECT
@@ -1088,15 +1088,15 @@ Trong đó:
 
 Sơ đồ Venn minh họa cách hoạt động của `INNER JOIN`:
 
-<img src = "https://i.imgur.com/2tLh5xM.png">
+<img src = "https://i.imgur.com/2tLh5xM.png"/>
 
-### Ví dụ về cách sử dụng
+### Ví dụ về cách sử dụng {id="v-d-v-c-ch-s-d-ng_1"}
 
 #### 1. Sử dụng `INNER JOIN` cơ bản
 
 Ta sử dụng 2 bảng `products` và `productlines`:
 
-<img src ="https://i.imgur.com/5NK3aOy.png">
+<img src ="https://i.imgur.com/5NK3aOy.png"/>
 
 Theo sơ đồ, ta thấy bảng `products` có cột `productLine` tham chiếu giá trị của cột `productLine` của
 bảng `productlines`. Cột `productLine` trong bảng `products` được gọi là khóa ngoại.
@@ -1122,7 +1122,7 @@ INNER JOIN productlines t2
 
 Kết quả:
 
-<img src = "https://i.imgur.com/a9FIgfM.png">
+<img src = "https://i.imgur.com/a9FIgfM.png"/>
 
 Vì các cột được nối của 2 bảng có cùng tên `productline` nên ta có thể sử dụng `USING` như sau:
 
@@ -1140,7 +1140,7 @@ INNER JOIN productlines USING (productline);
 
 Ta sử dụng 2 bảng `orders` và `orderdetails`
 
-<img src = "https://i.imgur.com/egkouFP.png">
+<img src = "https://i.imgur.com/egkouFP.png"/>
 
 Truy vấn trả về số thứ tự, trạng thái đơn hàng và tổng doanh số từ 2 bảng `orders` và `orderdetails`:
 
@@ -1158,7 +1158,7 @@ GROUP BY orderNumber;
 
 Kết quả:
 
-<img src = "https://i.imgur.com/IEnyxb3.png">
+<img src = "https://i.imgur.com/IEnyxb3.png"/>
 
 Tương tự, ta có thể sử dụng với `USING`:
 
@@ -1177,7 +1177,7 @@ GROUP BY orderNumber;
 
 Ta sẽ dùng 3 bảng `products`, `orders`, `orderdetails`. Truy vấn ra danh sách đặt hàng kèm tên với giá sản phẩm,...
 
-<img src = "https://i.imgur.com/LVkuQRz.png">
+<img src = "https://i.imgur.com/LVkuQRz.png"/>
 
 ```sql
 SELECT 
@@ -1200,7 +1200,7 @@ ORDER BY
 
 Kết quả:
 
-<img src = "https://i.imgur.com/BHRyHd5.png">
+<img src = "https://i.imgur.com/BHRyHd5.png"/>
 
 #### 4. Sử dụng `INNER JOIN` với các toán tử khác
 
@@ -1223,7 +1223,7 @@ WHERE
 
 Kết quả:
 
-<img src = "https://i.imgur.com/FvETN1R.png">
+<img src = "https://i.imgur.com/FvETN1R.png"/>
 
 ------------------------------------------------------------------------
 
@@ -1231,7 +1231,7 @@ Kết quả:
 
 Trong bài viết này, ta sẽ tìm hiểu cách sử dụng mệnh đề `LEFT JOIN` để lấy dữ liệu từ nhiều bảng dựa trên các điều kiện.
 
-### Cú pháp cơ bản
+### Cú pháp cơ bản {id="c-ph-p-c-b-n_9"}
 
 ```sql
 SELECT 
@@ -1245,7 +1245,7 @@ LEFT JOIN t2 ON
 - `t1` là bảng bên trái
 - `t2` là bảng bên phải
 
-### Cách hoạt động
+### Cách hoạt động {id="c-ch-ho-t-ng_2"}
 
 `LEFT JOIN` sẽ lấy dữ liệu từ bảng bên trái (`t1`). Nó sẽ khớp với từng hàng từ bảng bên trái (`t1`) với mỗi hàng của
 bảng bên phải (`t2`) dựa trên điều kiện `join_condition`.
@@ -1260,15 +1260,15 @@ Nói cách khác, `LEFT JOIN` trả về tất cả các hàng từ bảng bên 
 hợp hay không. Nếu không có kết quả khớp, các cột của hàng từ bảng bên phải(`t2`) sẽ có giá trị `NULL`.
 
 Sơ đồ Venn minh họa cách hoạt động của `LEFT JOIN`
-<img src = "https://i.imgur.com/vDWk5m6.png">
+<img src = "https://i.imgur.com/vDWk5m6.png"/>
 
-### Ví dụ về cách sử dụng
+### Ví dụ về cách sử dụng {id="v-d-v-c-ch-s-d-ng_2"}
 
 #### 1. `LEFT JOIN` với 2 bảng
 
 Ta sử dụng 2 bảng `customers` và `orders`
 
-<img src= "https://i.imgur.com/8dneoPw.png">
+<img src= "https://i.imgur.com/8dneoPw.png"/>
 
 Theo sơ đồ thì mỗi `customers` có thể có nhiều `orders`, còn mỗi `orders` chỉ từ 1 `customers`.
 
@@ -1302,7 +1302,7 @@ LEFT JOIN orders o
 
 Kết quả:
 
-<img src = "https://i.imgur.com/DD5Igl0.png">
+<img src = "https://i.imgur.com/DD5Igl0.png"/>
 
 Do 2 cột `customerNumber` của 2 bảng giống nhau nên ta có thể sử dụng `USING` như sau:
 
@@ -1337,12 +1337,12 @@ WHERE
 
 Kết quả:
 
-<img src = "https://i.imgur.com/xZFx6ce.png">
+<img src = "https://i.imgur.com/xZFx6ce.png"/>
 
 #### 3. `LEFT JOIN` với 3 bảng
 
 Sử dụng 3 bảng `employees`, `customers`, và `payments`:
-<img src  ="https://i.imgur.com/IPLbBPC.png">
+<img src  ="https://i.imgur.com/IPLbBPC.png"/>
 
 Truy vấn ra danh sách tất cả các nhân viên và các khách hàng mà họ phụ trách.
 
@@ -1366,7 +1366,7 @@ ORDER BY
 
 Kết quả:
 
-<img src = "https://i.imgur.com/wgUJknP.png">
+<img src = "https://i.imgur.com/wgUJknP.png"/>
 
 - `LEFT JOIN` thứ nhất trả về tất cả các nhân viên và khách hàng của họ quản lí hoặc trả về giá trị `NULL` nếu không
   quản lí khách hàng nào.
@@ -1392,7 +1392,7 @@ WHERE
     orderNumber = 10123;
 ```
 
-<img src = "https://i.imgur.com/hLXdFfz.png">
+<img src = "https://i.imgur.com/hLXdFfz.png"/>
 
 
 **Nếu ta sử dụng mệnh đề `ON`:**
@@ -1409,7 +1409,7 @@ LEFT JOIN orderdetails od
        o.orderNumber = 10123;
 ```
 
-<img src = "https://i.imgur.com/86nDPsJ.png">
+<img src = "https://i.imgur.com/86nDPsJ.png"/>
 
 Ở đây sẽ trả về tất cả đơn hàng nhưng chỉ có đơn hàng có `orderNumber` = 10123 là có chi tiết đơn hàng.
 
@@ -1444,10 +1444,10 @@ phải với các giá trị NULL thành 1 hàng mới.
 
 Nói cách khác, `RIGHT JOIN` trả về tất cả các hàng từ bảng bên phải bất kể bảng bên trái có hàng phù hợp hay không.
 
-### Ví dụ về cách sử dụng
+### Ví dụ về cách sử dụng {id="v-d-v-c-ch-s-d-ng_3"}
 
 Chúng ta sẽ sử dụng 2 bảng `employees` và `customers`
-<img src = "https://i.imgur.com/qdWqvM4.png">
+<img src = "https://i.imgur.com/qdWqvM4.png"/>
 
 Cột `salesRepEmployeeNumber` trong bảng `customers` liên kết với cột `employeeNumber` của bảng `employees`.
 
@@ -1472,7 +1472,7 @@ ORDER BY
     employeeNumber;
 ```
 
-<img src = "https://i.imgur.com/3w51072.png">
+<img src = "https://i.imgur.com/3w51072.png"/>
 
 #### 2. `RIGHT JOIN` với `IS NULL`
 
@@ -1490,20 +1490,20 @@ WHERE customerNumber IS NULL
 ORDER BY employeeNumber;
 ```
 
-<img src = "https://i.imgur.com/Xv6FwI6.png">
+<img src = "https://i.imgur.com/Xv6FwI6.png"/>
 
 ------------------------------------------------------------------------
 
 ## `CROSS JOIN`
 
-### Cú pháp cơ bản
+### Cú pháp cơ bản {id="c-ph-p-c-b-n_2"}
 
 ```sql
 SELECT * FROM t1
 CROSS JOIN t2;
 ```
 
-### Cách hoạt động
+### Cách hoạt động {id="c-ch-ho-t-ng_1"}
 
 `CROSS JOIN` sẽ kết hợp tất cả các hàng từ 2 bảng lại, trong đó, mỗi hàng là sự kết hợp của trong bảng đầu tiên với hàng
 trong bảng thứ 2. Nếu mỗi bảng có `n` và `m` hàng tương ứng, tập kết quả sẽ có `n x m` hàng.
@@ -1518,7 +1518,7 @@ CROSS JOIN t2
 WHERE t1.id = t2.id;
 ```
 
-### Ví dụ về cách sử dụng
+### Ví dụ về cách sử dụng {id="v-d-v-c-ch-s-d-ng_4"}
 
 Chuẩn bị 1 số bảng để tìm hiểu cách `CROSS JOIN` hoạt động.
 
@@ -1587,11 +1587,11 @@ VALUES(1,1,20,'2017-01-02'),
 
 Bảng stores:
 
-<img src = "https://i.imgur.com/71Mcl3t.png">
+<img src = "https://i.imgur.com/71Mcl3t.png"/>
 
 Bảng products:
 
-<img src = "https://i.imgur.com/o5PA6T3.png">
+<img src = "https://i.imgur.com/o5PA6T3.png"/>
 
 `CROSS JOIN` 2 bảng stores và products:
 
@@ -1603,7 +1603,7 @@ FROM
     stores CROSS JOIN products;
 ```
 
-<img src = "https://i.imgur.com/fgjdfJC.png">
+<img src = "https://i.imgur.com/fgjdfJC.png"/>
 
 ------------------------------------------------------------------------
 
@@ -1622,7 +1622,7 @@ Self Join được sử dụng để truy vấn dữ liệu phân cấp hoặc �
 
 Sử dụng bảng `employees`:
 
-<img src = "https://i.imgur.com/KWTyRMo.png">
+<img src = "https://i.imgur.com/KWTyRMo.png"/>
 
 Bảng này lưu trữ không chỉ dữ liệu nhân viên mà còn có id của người quản lí nhân viên đó, được xác định bởi
 cột `reportsTo`.
@@ -1641,7 +1641,7 @@ ORDER BY
     Manager;
 ```
 
-<img src = "https://i.imgur.com/3TYVvlE.png">
+<img src = "https://i.imgur.com/3TYVvlE.png"/>
 
 Đầu ra kết quả chỉ cho ra những nhân viên có người quản lí.
 
@@ -1662,7 +1662,7 @@ ORDER BY
     manager DESC;
 ```
 
-<img src = "https://i.imgur.com/bPPoWTy.png">
+<img src = "https://i.imgur.com/bPPoWTy.png"/>
 
 3. Self Join dùng để so sánh các hàng với nhau
 
@@ -1682,7 +1682,7 @@ ORDER BY
     c1.city;
 ```
 
-<img src = "https://i.imgur.com/njtw7LM.png">
+<img src = "https://i.imgur.com/njtw7LM.png"/>
 
 ------------------------------------------------------------------------
 
@@ -1691,12 +1691,12 @@ ORDER BY
 Trong bài này, ta sẽ học cách sử dụng `GROUP BY` để nhóm các hàng thành các nhóm con dựa trên các giá trị của cột hay
 biểu thức.
 
-### Chức năng
+### Chức năng {id="ch-c-n-ng_10"}
 
 `GROUP BY` nhóm một tập hợp các hàng với nhau theo các giá trị của cột hoặc biểu thức. `GROUP BY` trả về một hàng cho
 mỗi nhóm. Nói cách khác, nó làm giảm số lượng hàng trong tập kết quả
 
-### Cú pháp
+### Cú pháp {id="c-ph-p_5"}
 
 ```sql
 SELECT 
@@ -1713,15 +1713,15 @@ hoặc biểu thức được phân tách bằng dấu phẩy mà bạn muốn s
 
 ### Thứ tự đánh giá của SQL
 
-<img src="https://i.imgur.com/e9DNEE0.png">
+<img src="https://i.imgur.com/e9DNEE0.png"/>
 
-### Ví dụ
+### Ví dụ {id="v-d_6"}
 
 #### 1. `GROUP BY` đơn giản
 
 Ta sử dụng bảng `orders`
 
-<img src="https://i.imgur.com/o4i0zSz.png">
+<img src="https://i.imgur.com/o4i0zSz.png"/>
 
 Ta muốn nhóm các giá trị của trạng thái đơn hàng (`status`) thành các nhóm con.
 
@@ -1734,7 +1734,7 @@ GROUP BY status;
 
 **Kết quả:**
 
-<img src="https://i.imgur.com/kexDk87.png">
+<img src="https://i.imgur.com/kexDk87.png"/>
 
 Ta thấy `GROUP BY` trả về các trạng thái có trong bảng. Nó làm việc giống `DISTINCT` trong câu truy vấn sau:
 
@@ -1763,11 +1763,11 @@ GROUP BY status;
 
 **Kết quả:**
 
-<img src="https://i.imgur.com/oxy6tfS.png">
+<img src="https://i.imgur.com/oxy6tfS.png"/>
 
 Ví dụ khác, ta xem 2 bảng `orders` và `orderdetails`
 
-<img src="https://i.imgur.com/866AS8W.png">
+<img src="https://i.imgur.com/866AS8W.png"/>
 
 Bây giờ ta muốn tính toán tổng tiền của mỗi trạng thái đơn hàng. Ta làm như sau:
 
@@ -1785,7 +1785,7 @@ GROUP BY
 
 **Kết quả:**
 
-<img src="https://i.imgur.com/pQGUqh2.png">
+<img src="https://i.imgur.com/pQGUqh2.png"/>
 
 #### 3. `GROUP BY` với giá trị biểu thức
 
@@ -1807,7 +1807,7 @@ GROUP BY
 
 **Kết quả:**
 
-<img src="https://i.imgur.com/CZaHQRX.png">
+<img src="https://i.imgur.com/CZaHQRX.png"/>
 
 `YEAR(orderDate)` dùng để trích xuất dữ liệu năm từ `orderDate` để truy vấn dữ liệu theo năm.
 
@@ -1819,7 +1819,7 @@ GROUP BY
 
 Mệnh đề MySQL `HAVING` để chỉ định điều kiện lọc cho các nhóm hàng hoặc tổng hợp.
 
-### Cú pháp
+### Cú pháp {id="c-ph-p_2"}
 
 ```sql
 SELECT 
@@ -1839,13 +1839,13 @@ cho từng hàng riêng lẻ.
 
 ### Thứ tự đánh giá trong SQL
 
-<img src="https://i.imgur.com/lu0SVwx.png">
+<img src="https://i.imgur.com/lu0SVwx.png"/>
 
 ### Ví dụ
 
 Sử dụng bảng `orderdetails`
 
-<img src="https://i.imgur.com/OOiUc7H.png">
+<img src="https://i.imgur.com/OOiUc7H.png"/>
 
 - Sử dụng `GROUP BY` để lấy số thứ tự, số lượng mặt hàng được bán cho mỗi đơn hàng và tổng doanh số cho mỗi sản phẩm từ
   bảng `orderdetails`
@@ -1860,7 +1860,7 @@ Sử dụng bảng `orderdetails`
     GROUP BY ordernumber;
     ```
 
-<img src="https://i.imgur.com/PfUQqAe.png">
+<img src="https://i.imgur.com/PfUQqAe.png"/>
 
 - Bây giờ ta có thể tìm các đơn hàng có tổng doanh số lớn hơn 1000 bằng cách sử dụng `HAVING`
     ```sql
@@ -1878,7 +1878,7 @@ Sử dụng bảng `orderdetails`
 
 **Kết quả:**
 
-<img src="https://i.imgur.com/o70dGfj.png">
+<img src="https://i.imgur.com/o70dGfj.png"/>
 
 - Bạn có thể xây dựng một điều kiện phức tạp trong mệnh đề `HAVING` bằng các toán tử logic như `OR` và `AND`
 
@@ -1898,7 +1898,7 @@ Sử dụng bảng `orderdetails`
 
 **Kết quả**
 
-<img src="https://i.imgur.com/3ungjgA.png">
+<img src="https://i.imgur.com/3ungjgA.png"/>
 
 - Giả sử bạn muốn tìm tất cả các đơn đặt hàng ở trạng thái giao hàng và có tổng số tiền lớn hơn 1500, bạn có thể `JOIN`
   bảng `orderdetails` với bảng `orders` bằng cách sử dụng mệnh đề `INNER JOIN` và áp dụng một điều kiện trên
@@ -1922,7 +1922,7 @@ Sử dụng bảng `orderdetails`
 
 **Kết quả:**
 
-<img src="https://i.imgur.com/jFme8ki.png">
+<img src="https://i.imgur.com/jFme8ki.png"/>
 
 ------------------------------------------------------------------------
 
@@ -1956,7 +1956,7 @@ Cách sử dụng mệnh đề MySQL `ROLLUP` để tạo tổng phụ và tổn
     SELECT * FROM sales;
     ```
 
-    <img src="https://i.imgur.com/2my9CiL.png">
+    <img src="https://i.imgur.com/2my9CiL.png"/>
 
 ### Tổng quan về `ROLLUP`
 
@@ -1973,7 +1973,7 @@ Groupong set là tập hợp các cột mà bạn muốn nhóm.
         productline;
     ```
 
-    <img src="https://i.imgur.com/fMIXqod.png">
+    <img src="https://i.imgur.com/fMIXqod.png"/>
 
 - Query dưới đây tạo 1 Grouping set trống được kí hiệu là `()`
     ```sql
@@ -1983,7 +1983,7 @@ Groupong set là tập hợp các cột mà bạn muốn nhóm.
         sales;
     ```
 
-    <img src="https://i.imgur.com/HD4pwdO.png">
+    <img src="https://i.imgur.com/HD4pwdO.png"/>
 
 - Nếu muốn tạo 2 hay nhiều Grouping set trong cùng 1 câu truy vấn, bạn có thể sử dụng toán tử `UNION ALL` như sau:
     ```sql
@@ -2002,7 +2002,7 @@ Groupong set là tập hợp các cột mà bạn muốn nhóm.
         sales;
     ```
 
-    <img src="https://i.imgur.com/zFVZTD3.png">
+    <img src="https://i.imgur.com/zFVZTD3.png"/>
 
 - `UNION ALL` yêu cầu các câu truy vấn phải có cùng số cột, ta thêm cột `NULL` để thỏa mãn yêu cầu này.
 
@@ -2042,7 +2042,7 @@ Chính vì vậy, ta sẽ sử dụng `ROLLUP`.
         productline WITH ROLLUP;
     ```
 
-    <img src="https://i.imgur.com/taGwuFU.png">
+    <img src="https://i.imgur.com/taGwuFU.png"/>
 
 - `ROLLUP` tạo ra các tổng phụ và kèm với tổng chính giá trị các đơn hàng.
 
@@ -2083,7 +2083,7 @@ Chính vì vậy, ta sẽ sử dụng `ROLLUP`.
     WITH ROLLUP;
     ```
 
-    <img src="https://i.imgur.com/rgxppDv.png">
+    <img src="https://i.imgur.com/rgxppDv.png"/>
 
 - Ta thấy `ROLLUP` sẽ tạo các tổng khi thay đổi dòng sản phẩm và tổng chính khi đã hết các dòng sản phẩm.
 
@@ -2100,7 +2100,7 @@ Trong bài này, ta sẽ tìm hiểu cách sử dụng subquery để viết cá
 
 Subquery là 1 truy vấn được lồng trong 1 truy vấn khác, chẳng hạn như `SELECT`, `INSERT`, `UPDATE`, `DELETE`. Ngoài ra, một subquery có thể được lồng bên trong một subquery khác.
 
-#### Ví dụ
+#### Ví dụ {id="v-d_3"}
 Ví dụ dưới đây trả về các nhân viên làm việc tại các văn phòng ở USA:
 ```sql
 SELECT 
@@ -2116,20 +2116,20 @@ WHERE
             country = 'USA');
 ```
 
-<img src="https://i.imgur.com/lkhpa5x.png">
+<img src="https://i.imgur.com/lkhpa5x.png"/>
 
 Trong ví dụ, ta thấy:
 - subquery trả về tất cả các mã văn phòng của các văn phòng tại USA.
 - Truy vấn ngoài chọn họ và tên của nhân viên làm việc trong văn phòng có mã văn phòng nằm trong tập kết quả được trả về từ subquery
 
-<img src="https://i.imgur.com/qqxLgOU.png">
+<img src="https://i.imgur.com/qqxLgOU.png"/>
 
 Khi truy vấn được thực thi, truy vấn con chạy trước và trả về tập kết quả. Sau đó, tập kết quả này được sử dụng làm đầu vào cho truy vấn bên ngoài.
 
 ### 1. Subquery trong mệnh đề `WHERE`
 Ta sử dụng bảng `payments`:
 
-<img src="https://i.imgur.com/BTtkVLy.png">
+<img src="https://i.imgur.com/BTtkVLy.png"/>
 
 #### 1.1. Subquery với các toán tử so sánh
 - Ví dụ: Truy vấn sau trả về kết quả khách hàng có khoản thanh toán tối đa
@@ -2144,14 +2144,14 @@ Ta sử dụng bảng `payments`:
         amount = (SELECT MAX(amount) FROM payments);
     ```
 
-    <img src="https://i.imgur.com/zKRxTkQ.png">
+    <img src="https://i.imgur.com/zKRxTkQ.png"/>
 
 #### 1.2. Subquery với các toán tử `IN` `NOT IN`
 Nếu truy vấn con trả về nhiều hơn một giá trị, bạn có thể sử dụng các toán tử khác như toán tử `IN` hoặc `NOT IN` trong mệnh đề `WHERE`.
 
 Xem bảng `customers` và `orders` sau:
 
-<img src="https://i.imgur.com/isZyQX7.png">
+<img src="https://i.imgur.com/isZyQX7.png"/>
 
 Ví dụ dưới đây, ta sử dụng subquery `NOT IN` để tìm những khách hàng chưa đặt hàng như sau:
 ```sql
@@ -2165,7 +2165,7 @@ WHERE
                                 orders);
 ```
 
-<img src="https://i.imgur.com/Fjht6YE.png">
+<img src="https://i.imgur.com/Fjht6YE.png"/>
 
 ### 2. Subquery trong mệnh đề FROM
 - Khi sử dụng subquery với mệnh đề FROM, kết quả trả về được sử dụng như là 1 bảng tạm thời. Bảng này được gọi là bảng dẫn xuất hoặc subquery cụ thể.
@@ -2186,7 +2186,7 @@ WHERE
         ) AS lineitems;
     ```
 
-    <img src="https://i.imgur.com/AA9uJaL.png">
+    <img src="https://i.imgur.com/AA9uJaL.png"/>
 
   `FLOOR()` được sử dụng để xóa các số thập phân sau dấu phẩy.
 
@@ -2205,7 +2205,7 @@ Thuật ngữ bảng dẫn xuất và truy vấn con thường được sử d�
 
 Hình dưới đây minh họa một truy vấn sử dụng bảng dẫn xuất:
 
-<img src="https://i.imgur.com/5HRpeVX.png">
+<img src="https://i.imgur.com/5HRpeVX.png"/>
 
 **Lưu ý:** truy vấn con độc lập là truy vấn con có thể thực thi độc lập với câu lệnh chứa nó
 
@@ -2223,10 +2223,10 @@ FROM
 WHERE derived_table_name.c1 > 0;
 ```
 
-### 2. Ví dụ
+### 2. Ví dụ {id="2-v-d_1"}
 Truy vấn sau đây nhận được 5 sản phẩm hàng đầu theo doanh thu bán hàng trong năm 2003 từ các bảng `orders` và bảng `orderdetails` trong cơ sở dữ liệu mẫu:
 
-<img src="https://i.imgur.com/qLO4bhY.png">
+<img src="https://i.imgur.com/qLO4bhY.png"/>
 
 ```sql
 SELECT 
@@ -2243,11 +2243,11 @@ ORDER BY sales DESC
 LIMIT 5;
 ```
 
-<img src="https://i.imgur.com/f9RKbp4.png">
+<img src="https://i.imgur.com/f9RKbp4.png"/>
 
 Bạn có thể sử dụng kết quả của truy vấn này dưới dạng bảng dẫn xuất và nối nó với bảng `products` như sau:
 
-<img src="https://i.imgur.com/yoiNqNN.png">
+<img src="https://i.imgur.com/yoiNqNN.png"/>
 
 ```sql
 SELECT 
@@ -2268,7 +2268,7 @@ INNER JOIN
     products USING (productCode);
 ```
 
-<img src="https://i.imgur.com/HrLGXDx.png">
+<img src="https://i.imgur.com/HrLGXDx.png"/>
 
 Trong ví dụ:
 
@@ -2304,7 +2304,7 @@ Toán tử `NOT` phủ định toán tử `EXISTS`. Nói cách khác, `NOT EXIST
 #### 2.1. Ví dụ về `SELECT EXISTS`
 Xem mối quan hệ 2 bảng `customers` và `orders`
 
-<img src="https://i.imgur.com/MTGbMci.png">
+<img src="https://i.imgur.com/MTGbMci.png"/>
 
 Sử dụng toán tử `EXISTS` để tìm khách hàng có ít nhất một đơn hàng:
 ```sql
@@ -2323,7 +2323,7 @@ WHERE
                 = customers.customernumber);
 ```
 
-<img src="https://i.imgur.com/NBNru1B.png">
+<img src="https://i.imgur.com/NBNru1B.png"/>
 
 Trong ví dụ này, đối với mỗi hàng trong bảng `customers`, truy vấn sẽ kiểm tra số khách hàng trong bảng `orders`. Nếu `customerNumber` xuất hiện trong bảng `customers` tồn tại trong bảng `order`, truy subquery trả về hàng khớp đầu tiên. Do đó, toán tử `EXISTS` trả về **True** và dừng kiểm tra bảng `orders`. Mặt khác, subquery không trả về hàng nào và toán tử `EXISTS` trả về **False**
 
@@ -2345,7 +2345,7 @@ WHERE
     );
 ```
 
-<img src="https://i.imgur.com/JmS7B6R.png">
+<img src="https://i.imgur.com/JmS7B6R.png"/>
 
 #### 2.2. Ví dụ về `UPDATE EXISTS`
 Giả sử bạn phải cập nhật các tiện ích mở rộng trên điện thoại của các nhân viên làm việc tại văn phòng San Francisco.
@@ -2371,7 +2371,7 @@ Giả sử bạn phải cập nhật các tiện ích mở rộng trên điện 
         );
     ```
 
-<img src="https://i.imgur.com/NsyoM50.png">
+<img src="https://i.imgur.com/NsyoM50.png"/>
 
 - Truy vấn sau, thêm số `1` vào phần mở rộng điện thoại của nhân viên làm việc tại văn phòng ở San Francisco
     ```sql
@@ -2422,7 +2422,7 @@ Giả sử bạn muốn lưu trữ những khách hàng không có đơn đặt 
     SELECT * FROM customers_archive;
     ```
 
-    <img src="https://i.imgur.com/M1yJxo8.png">
+    <img src="https://i.imgur.com/M1yJxo8.png"/>
 
 #### 2.4. Ví dụ về `DELETE EXISTS`
 Một việc cuối cùng trong việc lưu trữ dữ liệu khách hàng là xóa các khách hàng tồn tại trong bảng `customers_archive` từ bảng `customers`.

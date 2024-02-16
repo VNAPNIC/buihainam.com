@@ -117,7 +117,7 @@ Created symlink from /etc/systemd/system/multi-user.target.wants/mariadb.service
 [root@localhost ~]# mysql_secure_installation
 ```
 Sau đó thiết lập một số thông tin cơ bản:
-<img src = "https://i.imgur.com/B6PT84g.png">
+<img src = "https://i.imgur.com/B6PT84g.png" />
 
 Khởi động lại dịch vụ MariaDB
 ```

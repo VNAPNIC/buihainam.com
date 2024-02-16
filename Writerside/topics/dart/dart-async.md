@@ -15,7 +15,7 @@ Function bất đồng bộ được khai báo có từ khóa `async` phía sau,
 
 Nếu một function đã khai báo là bất đồng bộ `async` thì trong function có thể sử dụng thêm từ khóa `await` - chờ cho biểu thức thi hành xong mới thi hành các code tiếp theo của function.
 
-```dart
+```java
 main() {
   Future f = showInfomation();
 	f.then((data) => notifyFinish(data))
@@ -45,7 +45,7 @@ secondFunction() {
 }
 ```
 
-```dart
+```java
 	Future<String> showInfomation() async {
         var data = await getInfomation();
         print('This is your data -' + DateTime.now().toString());
@@ -56,7 +56,7 @@ secondFunction() {
 
 Trả về từ hàm `async` là một đối tượng Future. Từ đối tượng này, ta có thể gán các hàm callback, được chạy mỗi khi dữ liệu hoàn thành trả về bởi hàm `async`, để gán hàm callback sử dụng phương thức: `Future.then((data) => callBack(data));`
 
-```dart
+```java
 	main() {
         Future f = showInfomation();
 	    f.then((data) => notifyFinish(data))
@@ -69,7 +69,7 @@ Nếu muốn bắt lỗi trong hàm `async` cũng dùng biểu thức `try ... c
 
 Dùng biểu thức `try ... catch`
 
-```dart
+```java
 Future<String> showInfomation() async {
   var data;
   try {
@@ -86,7 +86,7 @@ Future<String> showInfomation() async {
 
 Nếu không bắt lỗi trực tiếp từ `async`, có thể bắt lỗi ở `Future`, đây là ví dụ:
 
-```dart
+```java
 	main() {
 	  Future f = showInfomation();
 	  f.then((data) =>notifyFinish(data))
@@ -99,7 +99,7 @@ Bạn hãy throw một Exception trong hàm getInfomation, hoặc showInfomation
 
 Ví dụ phát sinh lỗi ở hàm `getInfomation`
 
-```dart
+```java
 getInfomation()  {
   for (int i = 1; i<=1000; i++);
   throw new Exception('Không lấy được thông tin');
@@ -122,21 +122,21 @@ Một số từ khóa thường sử dụng trong generator function:
 - `yield*`: phát ra các giá trị nếu generator là đệ quy.
 - `await for`: được thiết kế để hoạt động tốt với stream.
 
-```dart
+```java
 	Iterable naturalsTo(n) sync* {
 		int k = 0;
 		while (k < n) yield k++;
 	}
 ```
 
-```dart
+```java
 	Stream asynchronousNaturalsTo(n) async* {
 	  int k = 0;
 	  while (k < n) yield k++;
 	}
 ```
 
-```dart
+```java
 	Iterable naturalsDownFrom(n) sync* {
 	  if ( n > 0) {
 		yield n;
@@ -155,7 +155,7 @@ Cung cấp một chuỗi dữ liệu không đồng bộ(tương tự với obse
 
 Có chứa 1 simple stream. sử dụng để tạo stream, kiểm soát stream(listen on, push event).
 
-```dart
+```java
 	StreamController<String> streamController = new StreamController();
 	streamController.stream.listen((data) {
 		print("DataReceived: " + data);
@@ -170,11 +170,11 @@ Có chứa 1 simple stream. sử dụng để tạo stream, kiểm soát stream(
 	
 ### StreamSubscription
 
-Cung cấp các sự kiện cho listener và giữ các callbacks được sử dụng để xử lý các sự kiện.<br>
-Khi bạn định nghĩa 1 listener, bạn sẽ nhận được [StreamSubscription](https://api.dartlang.org/stable/2.2.0/dart-async/StreamSubscription-class.html) object. [StreamSubscription](https://api.dartlang.org/stable/2.2.0/dart-async/StreamSubscription-class.html) sẽ thông báo cho bạn biết có điều gì đặc biệt xảy ra trong Stream(Giá trị được đẩy ra khỏi Stream, có lỗi xảy ra, Stream bị huỷ...). Do đó, [StreamSubscription](https://api.dartlang.org/stable/2.2.0/dart-async/StreamSubscription-class.html) có thể được sử dụng để tạm dừng/tiếp tục event từ các stream khi được yêu cầu.<br>
+Cung cấp các sự kiện cho listener và giữ các callbacks được sử dụng để xử lý các sự kiện.
+Khi bạn định nghĩa 1 listener, bạn sẽ nhận được [StreamSubscription](https://api.dartlang.org/stable/2.2.0/dart-async/StreamSubscription-class.html) object. [StreamSubscription](https://api.dartlang.org/stable/2.2.0/dart-async/StreamSubscription-class.html) sẽ thông báo cho bạn biết có điều gì đặc biệt xảy ra trong Stream(Giá trị được đẩy ra khỏi Stream, có lỗi xảy ra, Stream bị huỷ...). Do đó, [StreamSubscription](https://api.dartlang.org/stable/2.2.0/dart-async/StreamSubscription-class.html) có thể được sử dụng để tạm dừng/tiếp tục event từ các stream khi được yêu cầu.
 Chú ý: Phải đảm bảo hủy [StreamSubscription](https://api.dartlang.org/stable/2.2.0/dart-async/StreamSubscription-class.html) khi không cần thiết.
 
-```dart
+```java
 	final StreamSubscription subscription = ctrl.stream
 					      .where((value) => (value % 2 == 0))
 					      .listen((value) => print('$value'));
@@ -184,7 +184,7 @@ Chú ý: Phải đảm bảo hủy [StreamSubscription](https://api.dartlang.org
 
 ### StreamTransformer 
 
-Được sử dụng để xử lý dữ liệu trước khi dữ liệu được đẩy ra ngoài. Đầu ra của [StreamTransformer](https://api.dartlang.org/stable/2.2.0/dart-async/StreamTransformer-class.html) là 1 Stream.<br>
+Được sử dụng để xử lý dữ liệu trước khi dữ liệu được đẩy ra ngoài. Đầu ra của [StreamTransformer](https://api.dartlang.org/stable/2.2.0/dart-async/StreamTransformer-class.html) là 1 Stream.
 Một StreamTransformer có thể sử dụng trong 1 số quá trình như:
 
 - Filtering: lọc dữ liệu theo 1 định nghĩa nào đó.
@@ -198,7 +198,7 @@ Một StreamTransformer có thể sử dụng trong 1 số quá trình như:
 Để tạo ra 1 [StreamTransformer](https://api.dartlang.org/stable/2.2.0/dart-async/StreamTransformer-class.html), sử dụng factory constructor `fromHandlers()`.
 Và để bắt đầu sử dụng [StreamTransformer](https://api.dartlang.org/stable/2.2.0/dart-async/StreamTransformer-class.html) cho [Stream](https://api.dartlang.org/stable/2.2.0/dart-async/Stream-class.html) thì gọi method `transform()` và truyền vào 1 [StreamTransformer](https://api.dartlang.org/stable/2.2.0/dart-async/StreamTransformer-class.html)
 
-```dart
+```java
 	StreamTransformer<S, T>.fromHandlers({
 		void handleData(S data, EventSink<T> sink ),
 		void handleError(Object error, StackTrace stackTrace, EventSink<T> sink),
@@ -224,7 +224,7 @@ Cách để tạo ra 1 [Single-subscription Stream](https://www.dartlang.org/tut
 
 Ví dụ về Single-subcription Stream:
 
-```dart
+```java
 void main() {
   //
   // Initialize a "Single-Subscription" Stream controller
@@ -261,7 +261,7 @@ Listener mới sẽ nhận được các event kể từ thời điểm nó bắ
 
 Để tạo 1 [Broadcast Streams](https://www.dartlang.org/tutorials/language/streams#broadcast-streams), ta sử dụng factory constructor của [StreamController](https://api.dartlang.org/stable/2.2.0/dart-async/StreamController-class.html) là `StreamController.broadcast()`.
 
-```dart
+```java
 StreamController<String> streamController = new StreamController.broadcast(); 
 
 main() {
@@ -294,7 +294,7 @@ main() {
 
 Bài viết đã trình bày tổng quan về xử lý đồng bộ và bất đồng bộ trong dart. Để có cái nhìn tổng quan hơn, tôi xin đưa ra một ví dụ sử dụng kết hợp những điều đã trình bày bên trên
 
-```dart
+```java
 Future<int> sumStream(Stream<int> stream) async {
   var sum = 0;
   await for (var value in stream) {

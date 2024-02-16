@@ -13,7 +13,7 @@ Sau khi cài đặt, các bạn mở `IntelliJ IDEA` > `Configure` > `Preference
 - Install Dart SDK: Làm theo các bước sau để sử dụng Dart phiên bản 2 (Vì còn trong giai đoạn dev, nên nếu chỉ cài đặt theo cách thông thường sẽ cài phiên bản 1 - stable)
 
     `Important: The Dart 2 SDK is available from the dev channel only.`
-    ```terminal
+    ```Bash
     $ brew tap dart-lang/dart
     $ brew install dart
     $ brew upgrade dart --devel --force
@@ -22,7 +22,7 @@ Sau khi cài đặt, các bạn mở `IntelliJ IDEA` > `Configure` > `Preference
 - Install Flutter SDK: (Nếu bạn không code Flutter thì có thể bỏ qua)
     - Tải phiên bản SDK mới nhất tại [SDK Archive](https://flutter.io/sdk-archive/#macos)
     - Giải nén vào thư mục `xyz` nào đó trên máy bạn. (Dùng lệnh `unzip` hoặc thao tác trực tiếp bằng tay 😂). Ví dụ ở đây mình giải nén vào thư mục `Mobile`:
-    ```terminal
+    ```Bash
     $ pwd
     /Users/euclid/Data/Mobile
     $ ls -la
@@ -33,15 +33,15 @@ Sau khi cài đặt, các bạn mở `IntelliJ IDEA` > `Configure` > `Preference
     drwxr-xr-x@ 25 euclid  staff   850 Jun 19 09:31 flutter
     ```
     - Thêm `flutter` vào system path. Mình dùng [“Oh My ZSH!”](https://ohmyz.sh/) nên sẽ sử file `.zshrc`, nếu các bạn không dùng thì sửa file `.bashrc`.
-    ```terminal
+    ```Bash
     $ vim ~/.zshrc
     ```
-    ```sh
+    ```Bash
     export FLUTTER=/Volumes/MACOS/Users/euclid/Data/Mobile/flutter/bin
     export PATH=$FLUTTER:$PATH
     ```
     - Khởi động lại `Terminal` và kiểm tra thông tin:
-    ```terminal
+    ```Bash
     $ flutter doctor
     ```
 - Platform setup: (Nếu bạn không code Flutter thì có thể bỏ qua)
@@ -58,53 +58,55 @@ Sau khi cài đặt, các bạn mở `IntelliJ IDEA` > `Configure` > `Preference
         1. Nếu sau khi cài đặt mà không có **[Flutter Device Selection]** như hình bên dưới trong các Flutter Project:
         ![](Device_Selector_List.png)
         Thì có thể phải update lại SDK & Khởi động lại máy tính 😂
-        ```terminal
+        ```Bash
         sdkmanager --update
         ```
         Xem thêm giải pháp tại [[1]](https://intellij-support.jetbrains.com/hc/en-us/community/posts/360000002670-Download-SDK-for-IDEA-and-nothing-IDEA-android-sdk-is-up-to-date) [[2]](https://stackoverflow.com/questions/45268254/how-do-i-install-the-standalone-android-sdk-and-then-add-it-to-intellij-idea-on/45268592#45268592).
     - iOS Setup
         1. Cài đặt Xcode 9.0 hoặc bản mới hơn ([web download](https://developer.apple.com/xcode/) hoặc [Mac App Store](https://itunes.apple.com/us/app/xcode/id497799835))
         1. Cấu hình lại Xcode command-line tools:
-        ```terminal
+        ```Bash
         $ sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
         ```
         Có thể đổi lại đường dẫn tới Xcode trên máy bạn cho phù hợp. Confirm lại hoạt động ta chạy câu lệnh sau:
-        ```terminal
+        ```Bash
         $ sudo xcodebuild -license
         ```
         1. Cấu hình iOS simulator:
-        ```terminal
+        ```Bash
         $ open -a Simulator
         ```
-        ![](iOS_simulator.png)
+      
+        ![](iOS_simulator.png){:height="132" width="432"}
+  
         **Hardware > Device** và **Window > Scale**.
         1. Deploy to iOS devices
             - Cài đặt [Homebrew](http://brew.sh/).
             - Chạy các câu lệnh sau:
-            ```terminal
+            ```Bash
             $ brew update
             $ brew install --HEAD libimobiledevice
             $ brew install ideviceinstaller ios-deploy cocoapods
             $ pod setup
             ```
             Trong quá trình cài `libimobiledevice` nếu bạn gặp lỗi:
-            ```terminal
+            ```Bash
             ./configure: line 15993: syntax error near unexpected token \`libusbmuxd,'
             ./configure: line 15993: `PKG_CHECK_MODULES(libusbmuxd, libusbmuxd >= $LIBUSBMUXD_VERSION)'
             ```
             Hãy chạy các lệnh sau:
-            ```terminal
+            ```Bash
             $ sudo chmod 777 /usr/local/share/aclocal
             $ brew install pkg-config
             $ brew link pkg-config
             ```
             rồi tiếp tục cài lại xem sao nhé 😑 Cài đặt `pod` mất cỡ ~ 500mb nên hãy check lại dung lượng ổ SSD trước nhé. Máy mình chỉ có 128Gb thôi 😢
 - Install [Webdev](https://pub.dartlang.org/packages/webdev)
-```terminal
+```Bash
 $ pub global activate webdev
 ```
 Thêm `pub executables` vào system path:
-```terminal
+```Bash
     $ vim ~/.zshrc
 ```
 ```
@@ -119,12 +121,14 @@ Nếu bạn muốn bắt tay tạo ứng dụng web với AngularDart thì hãy 
 Mở `IntelliJ IDEA` lên và bắt đầu tạo 1 project mới sử dụng `Dart` thôi > `Create New Project` 😑
 
 ![](IntelliJ_IDEA.png)
+
 ![](IntelliJ_create_new_angular_dart_project.png)
+
 ![](New_angular_dart_application.png)
 
 Khởi động web server trên Terminal
 
-```terminal
+```Bash
 $ cd <path_to_angular_dart_project>
 
 $ webdev serve
@@ -148,10 +152,14 @@ Serving `test` on http://localhost:8081
 ```
 
 Hoặc right-click vào `HTML` file và chọn **Open in Browser**
+
 ![](Open_index.html_in_browser.png)
+
 Nếu có lỗi
+
 ![](Dart_dev_server_error.png)
-```terminal
+
+```Bash
 /usr/local/opt/dart/libexec/bin/pub global run webdev serve web:50858
 webdev could not run for this project.
 No pubspec.lock file found, please run "pub get" first.
@@ -181,6 +189,7 @@ DONE ! 😎
 Để bắt đầu học `Dart`, mình khuyên các bạn nên tạo `Command-line application`, vừa nhẹ nhàng lại tăng mức độ tập trung vào ngôn ngữ hơn. Chỉ cần chú ý khi tạo `Project` nhớ ✅ lại kiểu dự án là được:
 
 ![](IntelliJ_create_new_console_dart_project.png)
+
 ![](New_console_dart_application.png)
 
 ## Learn dart 2
